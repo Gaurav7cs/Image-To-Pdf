@@ -1,68 +1,206 @@
 ---
 import Layout from '../layouts/Layout.astro';
+
+const pageTitle = "About Us — The Modern, Privacy-First PDF Toolkit | Image To Pdf";
+const pageDescription = "Learn why OnlineImageToPdf.com was built: to eliminate slow server uploads, paywalls, and security risks with 100% client-side, in-browser document compilation.";
+const canonicalUrl = "https://onlineimagetopdf.com/about";
+
+const aboutSchemas = [
+  {
+    "@context": "https://schema.org",
+    "@type": "AboutPage",
+    "name": pageTitle,
+    "url": canonicalUrl,
+    "description": pageDescription,
+    "mainEntity": {
+      "@type": "Organization",
+      "name": "Image To Pdf",
+      "alternateName": ["OnlineImageToPdf", "OnlineImageToPdf.com"],
+      "url": "https://onlineimagetopdf.com",
+      "logo": "https://onlineimagetopdf.com/og-image.png",
+      "foundingDate": "2025",
+      "description": "Developer of client-side browser utilities for converting images to PDF, document resizing, and PDF page management.",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "email": "support@onlineimagetopdf.com",
+        "contactType": "Customer Support"
+      }
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://onlineimagetopdf.com"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "About Us",
+        "item": canonicalUrl
+      }
+    ]
+  }
+];
 ---
 
 <Layout
-  title="About Us — The Modern, Privacy-First PDF Toolkit | Image To Pdf"
-  description="Learn why OnlineImageToPdf was created to liberate users from sluggish server uploads, ad-cluttered tools, and privacy risks when working with documents."
-  canonicalUrl="https://onlineimagetopdf.com/about"
+  title={pageTitle}
+  description={pageDescription}
+  canonicalUrl={canonicalUrl}
+  schema={aboutSchemas}
 >
-  <div class="max-w-3xl mx-auto px-4 sm:px-6 py-8 sm:py-12 md:py-16">
-    <div class="mb-8">
-      <span class="text-xs font-mono px-3 py-1 rounded-full bg-blue-100 dark:bg-blue-500/10 text-blue-800 dark:text-blue-300 border border-blue-300 dark:border-blue-500/20 font-bold">
-        Our Architecture
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 py-8 sm:py-12 md:py-16">
+    <!-- Breadcrumb Navigation -->
+    <nav aria-label="Breadcrumb" class="mb-6 flex items-center gap-2 text-xs text-neutral-600 dark:text-neutral-400 font-mono">
+      <a href="/" class="hover:text-neutral-950 dark:hover:text-white transition-colors">Home</a>
+      <span>/</span>
+      <span class="text-neutral-900 dark:text-neutral-200 font-semibold" aria-current="page">About Us</span>
+    </nav>
+
+    <!-- Header Section -->
+    <div class="mb-10 pb-8 border-b border-neutral-200 dark:border-neutral-800">
+      <span class="text-xs font-mono px-3 py-1 rounded-full bg-blue-100 dark:bg-blue-500/10 text-blue-800 dark:text-blue-300 border border-blue-300 dark:border-blue-500/20 font-bold inline-flex items-center gap-1.5">
+        <span class="w-2 h-2 rounded-full bg-blue-500"></span>
+        Our Architecture &amp; Mission
       </span>
-      <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-neutral-950 dark:text-white mt-3">
+      <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-neutral-950 dark:text-white mt-3">
         Why We Built OnlineImageToPdf
       </h1>
-      <p class="text-xs text-neutral-600 dark:text-neutral-400 font-mono font-medium mt-1.5">Re-architecting online document utilities for the modern web.</p>
+      <p class="text-xs sm:text-sm text-neutral-600 dark:text-neutral-400 font-mono font-medium mt-2">
+        Re-architecting online document utilities for zero server dependence, absolute privacy, and instant speed.
+      </p>
     </div>
 
-    <div class="prose dark:prose-invert text-sm sm:text-base text-neutral-800 dark:text-neutral-200 space-y-6 leading-relaxed">
-      <p>
-        For over a decade, converting an image to a PDF meant visiting an outdated website, uploading personal tax forms, medical records, or family photos to a mysterious remote server, waiting in a server conversion queue, and downloading the result surrounded by distracting banner advertisements.
-      </p>
+    <!-- Core Narrative -->
+    <div class="prose dark:prose-invert max-w-none text-sm sm:text-base text-neutral-800 dark:text-neutral-200 space-y-8 leading-relaxed">
+      <section>
+        <h2 class="text-xl sm:text-2xl font-bold text-neutral-950 dark:text-white mb-3">The Problem With Legacy PDF Converters</h2>
+        <p>
+          For over a decade, converting an image to a PDF or resizing a document required visiting legacy websites. Users were expected to upload sensitive documents—medical receipts, government IDs, academic transcripts, or confidential contracts—over the internet to remote third-party cloud servers.
+        </p>
+        <p class="mt-3">
+          Once on remote servers, your files sat in queue systems, faced bandwidth bottlenecks, and were exposed to potential data leaks or persistent retention. To make matters worse, legacy tools locked basic functionality behind aggressive paywalls, daily task limits, and distracting banner advertising.
+        </p>
+      </section>
 
-      <p>
-        Modern web browsers are capable of running complex desktop software locally. With WebAssembly, HTML5 Canvas, and modern JavaScript engines, computers and smartphones possess all the computing power required to build, merge, compress, and manipulate PDF documents in milliseconds.
-      </p>
-
-      <h2 class="text-lg sm:text-xl font-bold text-neutral-950 dark:text-white pt-4">Key Technological Pillars</h2>
-      
-      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 my-6">
-        <div class="p-4 sm:p-5 rounded-xl bg-neutral-50 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 shadow-xs">
-          <h3 class="font-bold text-sm text-neutral-950 dark:text-white mb-1.5">In-Memory Compilation</h3>
-          <p class="text-xs text-neutral-700 dark:text-neutral-300 leading-relaxed">
-            PDF binary objects are structured directly in device memory using native byte arrays, ensuring near-zero processing latency.
-          </p>
-        </div>
-
-        <div class="p-4 sm:p-5 rounded-xl bg-neutral-50 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 shadow-xs">
-          <h3 class="font-bold text-sm text-neutral-950 dark:text-white mb-1.5">Local Sandboxing</h3>
-          <p class="text-xs text-neutral-700 dark:text-neutral-300 leading-relaxed">
-            Files operate under strict browser security policies. No temporary server files, no remote logging, and no persistent disk cache.
-          </p>
-        </div>
-
-        <div class="p-4 sm:p-5 rounded-xl bg-neutral-50 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 shadow-xs">
-          <h3 class="font-bold text-sm text-neutral-950 dark:text-white mb-1.5">Zero Paywalls</h3>
-          <p class="text-xs text-neutral-700 dark:text-neutral-300 leading-relaxed">
-            Because conversions do not consume costly server CPU compute clusters, we don't need to force users into monthly subscription plans.
-          </p>
-        </div>
-
-        <div class="p-4 sm:p-5 rounded-xl bg-neutral-50 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 shadow-xs">
-          <h3 class="font-bold text-sm text-neutral-950 dark:text-white mb-1.5">Vercel-Grade Craft</h3>
-          <p class="text-xs text-neutral-700 dark:text-neutral-300 leading-relaxed">
-            A minimalist, clutter-free user interface designed for speed, clarity, high accessibility, and joyful usability.
-          </p>
-        </div>
+      <!-- Mission Highlight Card -->
+      <div class="p-6 rounded-2xl bg-neutral-50 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800">
+        <h3 class="text-base font-bold text-neutral-950 dark:text-white mb-2">Our Guiding Principle</h3>
+        <p class="text-xs sm:text-sm text-neutral-700 dark:text-neutral-300 leading-relaxed">
+          Modern client devices (laptops, phones, tablets) are extraordinarily powerful computers. By moving PDF compilation directly into the browser using modern web standards (WebAssembly, HTML5 Canvas, and native JavaScript byte arrays), we can execute 100% of document conversions locally. <strong>Zero bytes ever leave your device.</strong>
+        </p>
       </div>
 
-      <div class="mt-8 pt-6 border-t border-neutral-200 dark:border-neutral-800">
+      <section>
+        <h2 class="text-xl sm:text-2xl font-bold text-neutral-950 dark:text-white mb-3">Key Technological Pillars</h2>
+        
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 my-6">
+          <div class="p-5 rounded-xl bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 shadow-xs">
+            <div class="w-8 h-8 rounded-lg bg-blue-500/10 text-blue-600 dark:text-blue-400 flex items-center justify-center font-bold text-sm mb-3">
+              ⚡
+            </div>
+            <h3 class="font-bold text-sm text-neutral-950 dark:text-white mb-1.5">In-Memory Compilation</h3>
+            <p class="text-xs text-neutral-700 dark:text-neutral-300 leading-relaxed">
+              PDF binary structures are assembled directly in your device’s RAM via <code>pdf-lib</code> and Canvas byte-streams. Conversions complete in under a second with no upload latency.
+            </p>
+          </div>
+
+          <div class="p-5 rounded-xl bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 shadow-xs">
+            <div class="w-8 h-8 rounded-lg bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 flex items-center justify-center font-bold text-sm mb-3">
+              🛡️
+            </div>
+            <h3 class="font-bold text-sm text-neutral-950 dark:text-white mb-1.5">Strict Local Sandboxing</h3>
+            <p class="text-xs text-neutral-700 dark:text-neutral-300 leading-relaxed">
+              File reading and PDF generation adhere to browser security sandbox constraints. We maintain zero server databases, zero remote temporary storage, and zero telemetry on your documents.
+            </p>
+          </div>
+
+          <div class="p-5 rounded-xl bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 shadow-xs">
+            <div class="w-8 h-8 rounded-lg bg-purple-500/10 text-purple-600 dark:text-purple-400 flex items-center justify-center font-bold text-sm mb-3">
+              🎯
+            </div>
+            <h3 class="font-bold text-sm text-neutral-950 dark:text-white mb-1.5">Target Size Engineering</h3>
+            <p class="text-xs text-neutral-700 dark:text-neutral-300 leading-relaxed">
+              Built-in intelligent compression algorithms specifically engineered for government, university, and employment job portals requiring exact 100KB or 200KB limits.
+            </p>
+          </div>
+
+          <div class="p-5 rounded-xl bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 shadow-xs">
+            <div class="w-8 h-8 rounded-lg bg-amber-500/10 text-amber-600 dark:text-amber-400 flex items-center justify-center font-bold text-sm mb-3">
+              🔓
+            </div>
+            <h3 class="font-bold text-sm text-neutral-950 dark:text-white mb-1.5">Forever Free &amp; Open</h3>
+            <p class="text-xs text-neutral-700 dark:text-neutral-300 leading-relaxed">
+              Because client-side operations consume zero server CPU compute cycles, we don't have massive server bills to pay. This allows us to keep the platform free forever with zero paywalls.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2 class="text-xl sm:text-2xl font-bold text-neutral-950 dark:text-white mb-3">How We Compare</h2>
+        <div class="overflow-x-auto border border-neutral-200 dark:border-neutral-800 rounded-xl">
+          <table class="w-full text-left text-xs sm:text-sm">
+            <thead class="bg-neutral-100 dark:bg-neutral-900 font-bold text-neutral-950 dark:text-white">
+              <tr>
+                <th class="p-3">Feature</th>
+                <th class="p-3 text-emerald-600 dark:text-emerald-400">OnlineImageToPdf</th>
+                <th class="p-3 text-neutral-500">Legacy Cloud Converters</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-neutral-200 dark:divide-neutral-800">
+              <tr>
+                <td class="p-3 font-semibold">Where files are processed</td>
+                <td class="p-3 text-emerald-600 dark:text-emerald-400 font-bold">100% on your device (Client)</td>
+                <td class="p-3 text-neutral-600 dark:text-neutral-400">Third-party remote servers</td>
+              </tr>
+              <tr>
+                <td class="p-3 font-semibold">Data upload risk</td>
+                <td class="p-3 text-emerald-600 dark:text-emerald-400 font-bold">Zero (0 bytes uploaded)</td>
+                <td class="p-3 text-neutral-600 dark:text-neutral-400">High (Network transit &amp; storage)</td>
+              </tr>
+              <tr>
+                <td class="p-3 font-semibold">Batch &amp; file size limits</td>
+                <td class="p-3 text-emerald-600 dark:text-emerald-400 font-bold">Unlimited (Device RAM bounded)</td>
+                <td class="p-3 text-neutral-600 dark:text-neutral-400">Restricted unless you pay</td>
+              </tr>
+              <tr>
+                <td class="p-3 font-semibold">Cost &amp; Subscriptions</td>
+                <td class="p-3 text-emerald-600 dark:text-emerald-400 font-bold">100% Free Forever</td>
+                <td class="p-3 text-neutral-600 dark:text-neutral-400">Frequent $6-$12/mo paywalls</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section>
+        <h2 class="text-xl sm:text-2xl font-bold text-neutral-950 dark:text-white mb-3">Our Open Web Commitment</h2>
+        <p>
+          We believe high-quality utility software should be fast, private, accessible, and respectful of user data. We do not engage in behavioral user tracking, intrusive banner ads, or data harvesting.
+        </p>
+        <p class="mt-3">
+          If you have questions, feedback, or would like to suggest a feature, please explore our <a href="/contact" class="text-blue-600 dark:text-blue-400 underline font-medium hover:text-blue-700">Contact page</a> or read our <a href="/privacy" class="text-blue-600 dark:text-blue-400 underline font-medium hover:text-blue-700">Privacy Guarantee</a>.
+        </p>
+      </section>
+
+      <!-- Navigation Footnote -->
+      <div class="mt-12 pt-6 border-t border-neutral-200 dark:border-neutral-800 flex flex-wrap items-center justify-between gap-4">
         <a href="/" class="text-blue-600 dark:text-blue-400 hover:underline font-bold text-xs inline-flex items-center gap-1">
           ← Back to converter tools
         </a>
+        <div class="flex items-center gap-4 text-xs text-neutral-600 dark:text-neutral-400">
+          <a href="/privacy" class="hover:text-neutral-950 dark:hover:text-white underline">Privacy Policy</a>
+          <span>•</span>
+          <a href="/terms" class="hover:text-neutral-950 dark:hover:text-white underline">Terms &amp; Conditions</a>
+          <span>•</span>
+          <a href="/contact" class="hover:text-neutral-950 dark:hover:text-white underline">Contact Us</a>
+        </div>
       </div>
     </div>
   </div>

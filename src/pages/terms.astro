@@ -1,0 +1,191 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const pageTitle = "Terms and Conditions of Service | Image To Pdf";
+const pageDescription = "Read the Terms and Conditions for OnlineImageToPdf.com. Understand user rights, 100% client-side privacy, acceptable use, and intellectual property terms.";
+const canonicalUrl = "https://onlineimagetopdf.com/terms";
+
+const termsSchemas = [
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": pageTitle,
+    "url": canonicalUrl,
+    "description": pageDescription,
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "Image To Pdf",
+      "url": "https://onlineimagetopdf.com"
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://onlineimagetopdf.com"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Terms & Conditions",
+        "item": canonicalUrl
+      }
+    ]
+  }
+];
+---
+
+<Layout
+  title={pageTitle}
+  description={pageDescription}
+  canonicalUrl={canonicalUrl}
+  schema={termsSchemas}
+>
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 py-8 sm:py-12 md:py-16">
+    <!-- Breadcrumb Navigation -->
+    <nav aria-label="Breadcrumb" class="mb-6 flex items-center gap-2 text-xs text-neutral-600 dark:text-neutral-400 font-mono">
+      <a href="/" class="hover:text-neutral-950 dark:hover:text-white transition-colors">Home</a>
+      <span>/</span>
+      <span class="text-neutral-900 dark:text-neutral-200 font-semibold" aria-current="page">Terms &amp; Conditions</span>
+    </nav>
+
+    <!-- Header -->
+    <div class="mb-10 pb-8 border-b border-neutral-200 dark:border-neutral-800">
+      <span class="text-xs font-mono px-3 py-1 rounded-full bg-neutral-100 dark:bg-neutral-800 text-neutral-800 dark:text-neutral-200 border border-neutral-300 dark:border-neutral-700 font-bold">
+        Legal Agreement
+      </span>
+      <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-neutral-950 dark:text-white mt-3">
+        Terms and Conditions
+      </h1>
+      <p class="text-xs sm:text-sm text-neutral-600 dark:text-neutral-400 font-mono font-medium mt-2">
+        Last Updated: September 2026 • Effective Date: Immediate
+      </p>
+    </div>
+
+    <!-- Highlight Banner -->
+    <div class="p-5 sm:p-6 rounded-2xl bg-neutral-50 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 mb-10">
+      <div class="flex items-start gap-3.5">
+        <div class="w-8 h-8 rounded-lg bg-blue-500/10 text-blue-600 dark:text-blue-400 flex items-center justify-center shrink-0 font-bold text-base">
+          §
+        </div>
+        <div>
+          <h2 class="text-sm sm:text-base font-bold text-neutral-950 dark:text-white">Summary in Plain Language</h2>
+          <p class="mt-1 text-xs sm:text-sm text-neutral-700 dark:text-neutral-300 leading-relaxed">
+            OnlineImageToPdf.com provides free, client-side document processing tools. We do not upload, view, or retain your files on any server. You retain 100% ownership of your documents. You are free to use our tools for personal, academic, and commercial purposes subject to the standard acceptable use rules below.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Terms Body -->
+    <div class="prose dark:prose-invert max-w-none text-sm sm:text-base text-neutral-800 dark:text-neutral-200 space-y-8 leading-relaxed">
+      <section>
+        <h2 class="text-xl sm:text-2xl font-bold text-neutral-950 dark:text-white mb-3">1. Acceptance of Terms</h2>
+        <p>
+          By accessing and using <strong>OnlineImageToPdf.com</strong> ("the Service", "we", "us", or "our"), you acknowledge that you have read, understood, and agreed to be legally bound by these Terms and Conditions ("Terms") and our <a href="/privacy" class="text-blue-600 dark:text-blue-400 underline font-medium hover:text-blue-700">Privacy Policy</a>. If you do not agree to these Terms, please do not access or use the Service.
+        </p>
+      </section>
+
+      <section>
+        <h2 class="text-xl sm:text-2xl font-bold text-neutral-950 dark:text-white mb-3">2. Description of the Service</h2>
+        <p>
+          OnlineImageToPdf.com provides web-based utilities for converting, resizing, merging, and modifying images (JPG, PNG, WebP, HEIC) and PDF files. The Service operates natively inside your web browser using HTML5 Canvas, WebAssembly, and client-side JavaScript libraries. No files are transferred to external cloud servers for processing.
+        </p>
+        <p class="mt-3">
+          We reserve the right to modify, enhance, or discontinue any feature or tool at any time without prior notice.
+        </p>
+      </section>
+
+      <section>
+        <h2 class="text-xl sm:text-2xl font-bold text-neutral-950 dark:text-white mb-3">3. User Content &amp; Intellectual Property Ownership</h2>
+        <div class="p-4 rounded-xl bg-neutral-100 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 my-4">
+          <p class="font-semibold text-neutral-950 dark:text-white">
+            You retain 100% intellectual property ownership of all files and images processed using our tools.
+          </p>
+        </div>
+        <p>
+          Because our software runs entirely inside your client browser, OnlineImageToPdf.com never stores, inspects, copies, or claims any copyright, license, or proprietary rights over any images, PDFs, text, or data you process. You are solely responsible for ensuring you possess the lawful right, licenses, and copyright authorizations for any materials you convert or manipulate.
+        </p>
+      </section>
+
+      <section>
+        <h2 class="text-xl sm:text-2xl font-bold text-neutral-950 dark:text-white mb-3">4. Acceptable Use Policy</h2>
+        <p>You agree to use the Service solely for lawful purposes. You agree NOT to:</p>
+        <ul class="list-disc pl-5 mt-2 space-y-2 text-neutral-700 dark:text-neutral-300">
+          <li>Use the Service to distribute malware, spyware, trojans, or computer viruses.</li>
+          <li>Attempt to reverse engineer, decompile, disable, or tamper with the client-side security architecture or server endpoints.</li>
+          <li>Employ automated bots, scrapers, crawlers, or high-frequency denial-of-service scripts to overwhelm the site hosting infrastructure.</li>
+          <li>Violate any applicable local, state, national, or international copyright and intellectual property laws.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2 class="text-xl sm:text-2xl font-bold text-neutral-950 dark:text-white mb-3">5. Intellectual Property of the Service</h2>
+        <p>
+          All site designs, layout, codebases, branding, logos, graphics, and compilation scripts powering OnlineImageToPdf.com are the exclusive intellectual property of OnlineImageToPdf.com. You may not copy, replicate, resell, or distribute our source code or brand identity without explicit prior written authorization.
+        </p>
+      </section>
+
+      <section>
+        <h2 class="text-xl sm:text-2xl font-bold text-neutral-950 dark:text-white mb-3">6. Disclaimer of Warranties</h2>
+        <p>
+          THE SERVICE IS PROVIDED ON AN "AS IS" AND "AS AVAILABLE" BASIS WITHOUT WARRANTIES OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, TITLE, OR NON-INFRINGEMENT.
+        </p>
+        <p class="mt-3">
+          While we strive for 100% reliability and accurate conversion algorithms, performance depends on client hardware, browser capabilities, and device memory. We do not warrant that file conversion will be uninterrupted, error-free, or compatible with every non-standard legacy file specification.
+        </p>
+      </section>
+
+      <section>
+        <h2 class="text-xl sm:text-2xl font-bold text-neutral-950 dark:text-white mb-3">7. Limitation of Liability</h2>
+        <p>
+          IN NO EVENT SHALL ONLINEIMAGETOPDF.COM, ITS OPERATORS, FOUNDERS, OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES (INCLUDING LOSS OF DATA, LOSS OF PROFITS, OR BUSINESS INTERRUPTION) ARISING FROM THE USE OR INABILITY TO USE THE SERVICE.
+        </p>
+      </section>
+
+      <section>
+        <h2 class="text-xl sm:text-2xl font-bold text-neutral-950 dark:text-white mb-3">8. Third-Party Links</h2>
+        <p>
+          The Service may occasionally link to third-party resources, technical specifications, or community guides. We do not endorse or assume liability for the practices, accuracy, or content of any external third-party services.
+        </p>
+      </section>
+
+      <section>
+        <h2 class="text-xl sm:text-2xl font-bold text-neutral-950 dark:text-white mb-3">9. Termination &amp; Modification</h2>
+        <p>
+          We reserve the right to revise or update these Terms at any time. Changes become effective immediately upon posting to this page. Your continued use of the Service following revisions constitutes your acceptance of the amended Terms.
+        </p>
+      </section>
+
+      <section>
+        <h2 class="text-xl sm:text-2xl font-bold text-neutral-950 dark:text-white mb-3">10. Contact Information</h2>
+        <p>
+          If you have questions or inquiries regarding these Terms and Conditions, please contact us:
+        </p>
+        <div class="mt-3 p-4 rounded-xl bg-neutral-50 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 text-xs sm:text-sm font-mono">
+          <p>OnlineImageToPdf Legal Team</p>
+          <p class="mt-1">Email: <a href="mailto:support@onlineimagetopdf.com" class="text-blue-600 dark:text-blue-400 underline">support@onlineimagetopdf.com</a></p>
+          <p class="mt-1">Inquiry Form: <a href="/contact" class="text-blue-600 dark:text-blue-400 underline">https://onlineimagetopdf.com/contact</a></p>
+        </div>
+      </section>
+
+      <!-- Navigation Footnote -->
+      <div class="mt-12 pt-6 border-t border-neutral-200 dark:border-neutral-800 flex flex-wrap items-center justify-between gap-4">
+        <a href="/" class="text-blue-600 dark:text-blue-400 hover:underline font-bold text-xs inline-flex items-center gap-1">
+          ← Back to converter tools
+        </a>
+        <div class="flex items-center gap-4 text-xs text-neutral-600 dark:text-neutral-400">
+          <a href="/privacy" class="hover:text-neutral-950 dark:hover:text-white underline">Privacy Policy</a>
+          <span>•</span>
+          <a href="/about" class="hover:text-neutral-950 dark:hover:text-white underline">About Us</a>
+          <span>•</span>
+          <a href="/contact" class="hover:text-neutral-950 dark:hover:text-white underline">Contact Us</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</Layout>

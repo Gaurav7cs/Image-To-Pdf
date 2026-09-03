@@ -1,64 +1,181 @@
 ---
 import Layout from '../layouts/Layout.astro';
+
+const pageTitle = "Privacy Policy — 100% Client-Side In-Browser Processing | Image To Pdf";
+const pageDescription = "Our zero-upload privacy guarantee: all image to PDF conversions take place entirely in your browser using client-side JavaScript. No files or data are uploaded.";
+const canonicalUrl = "https://onlineimagetopdf.com/privacy";
+
+const privacySchemas = [
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": pageTitle,
+    "url": canonicalUrl,
+    "description": pageDescription,
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "Image To Pdf",
+      "url": "https://onlineimagetopdf.com"
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://onlineimagetopdf.com"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Privacy Policy",
+        "item": canonicalUrl
+      }
+    ]
+  }
+];
 ---
 
 <Layout
-  title="Privacy Policy — 100% Client-Side In-Browser Processing | Image To Pdf"
-  description="Our absolute privacy guarantee: all image and PDF document conversions take place entirely on your device using client-side JavaScript and WebAssembly. No files are uploaded."
-  canonicalUrl="https://onlineimagetopdf.com/privacy"
+  title={pageTitle}
+  description={pageDescription}
+  canonicalUrl={canonicalUrl}
+  schema={privacySchemas}
 >
-  <div class="max-w-3xl mx-auto px-4 sm:px-6 py-8 sm:py-12 md:py-16">
-    <div class="mb-8">
-      <span class="text-xs font-mono px-3 py-1 rounded-full bg-emerald-100 dark:bg-emerald-500/10 text-emerald-800 dark:text-emerald-300 border border-emerald-300 dark:border-emerald-500/20 font-bold">
-        Zero Data Collection Policy
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 py-8 sm:py-12 md:py-16">
+    <!-- Breadcrumb Navigation -->
+    <nav aria-label="Breadcrumb" class="mb-6 flex items-center gap-2 text-xs text-neutral-600 dark:text-neutral-400 font-mono">
+      <a href="/" class="hover:text-neutral-950 dark:hover:text-white transition-colors">Home</a>
+      <span>/</span>
+      <span class="text-neutral-900 dark:text-neutral-200 font-semibold" aria-current="page">Privacy Policy</span>
+    </nav>
+
+    <!-- Header Section -->
+    <div class="mb-10 pb-8 border-b border-neutral-200 dark:border-neutral-800">
+      <span class="text-xs font-mono px-3 py-1 rounded-full bg-emerald-100 dark:bg-emerald-500/10 text-emerald-800 dark:text-emerald-300 border border-emerald-300 dark:border-emerald-500/20 font-bold inline-flex items-center gap-1.5">
+        <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+        Zero Data Collection Guarantee
       </span>
-      <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-neutral-950 dark:text-white mt-3">
-        Privacy & Security Policy
+      <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-neutral-950 dark:text-white mt-3">
+        Privacy &amp; Security Policy
       </h1>
-      <p class="text-xs text-neutral-600 dark:text-neutral-400 font-mono font-medium mt-1.5">Last updated: September 2026</p>
+      <p class="text-xs sm:text-sm text-neutral-600 dark:text-neutral-400 font-mono font-medium mt-2">
+        Last Updated: September 2026 • Status: 100% In-Browser Local Processing
+      </p>
     </div>
 
-    <div class="prose dark:prose-invert text-sm text-neutral-800 dark:text-neutral-200 space-y-6 leading-relaxed">
-      <div class="p-5 rounded-2xl bg-emerald-50 dark:bg-emerald-950/20 border border-emerald-200 dark:border-emerald-800/60 text-neutral-900 dark:text-neutral-100">
-        <h3 class="font-bold text-sm text-emerald-800 dark:text-emerald-400 mb-1">Our Core Commitment</h3>
-        <p>
-          Unlike legacy conversion sites, <strong>OnlineImageToPdf.com does not receive, upload, store, or view your files</strong>. When you convert JPG, PNG, or other formats to PDF, the code executes directly inside your browser’s sandbox using client-side WebAssembly and modern web APIs.
-        </p>
+    <!-- Core Guarantee Card -->
+    <div class="p-6 rounded-2xl bg-emerald-50 dark:bg-emerald-950/20 border border-emerald-200 dark:border-emerald-800/60 mb-10">
+      <div class="flex items-start gap-4">
+        <div class="w-10 h-10 rounded-xl bg-emerald-500/15 text-emerald-700 dark:text-emerald-400 flex items-center justify-center shrink-0 font-bold text-lg">
+          🛡️
+        </div>
+        <div>
+          <h2 class="text-base sm:text-lg font-bold text-neutral-950 dark:text-white">Our Absolute Privacy Guarantee</h2>
+          <p class="mt-1.5 text-xs sm:text-sm text-neutral-700 dark:text-neutral-300 leading-relaxed">
+            Unlike legacy conversion websites, <strong>OnlineImageToPdf.com does not receive, upload, store, inspect, or retain your files on any remote server</strong>. When you convert JPG, PNG, WebP, or HEIC files to PDF, every operation executes 100% locally inside your browser's security sandbox.
+          </p>
+        </div>
       </div>
+    </div>
 
-      <h2 class="text-lg font-bold text-neutral-950 dark:text-white pt-4">1. How Document Processing Works</h2>
-      <p>
-        When you select or drop images into the converter:
-      </p>
-      <ul class="list-disc pl-5 space-y-2 text-neutral-750 dark:text-neutral-250">
-        <li>Your files are read from your local storage directly into browser memory (RAM) via standard HTML5 File APIs.</li>
-        <li>The PDF document is synthesized directly using client-side JavaScript (<code>pdf-lib</code> and Canvas).</li>
-        <li>The resulting PDF is offered as a local <code>blob:</code> download link.</li>
-        <li>No network requests containing your images, documents, or personal data are ever initiated.</li>
-      </ul>
+    <!-- Policy Sections -->
+    <div class="prose dark:prose-invert max-w-none text-sm sm:text-base text-neutral-800 dark:text-neutral-200 space-y-8 leading-relaxed">
+      <section>
+        <h2 class="text-xl sm:text-2xl font-bold text-neutral-950 dark:text-white mb-3">1. Technical Processing Lifecycle</h2>
+        <p>
+          To understand how your privacy is preserved, here is the technical sequence of events when you use our converter:
+        </p>
+        <ol class="list-decimal pl-5 space-y-2 text-neutral-700 dark:text-neutral-300 mt-2">
+          <li><strong>Local File Reading:</strong> When you select or drag images onto the site, the files are loaded directly into browser memory (RAM) using standard HTML5 <code>FileReader</code> APIs.</li>
+          <li><strong>Browser Canvas &amp; WebAssembly Synthesis:</strong> Our client-side JavaScript engine (<code>pdf-lib</code> and Canvas) calculates dimension layouts, applies compression, and builds the PDF binary directly on your processor.</li>
+          <li><strong>Local Blob Output:</strong> The finalized PDF document is compiled into an in-memory <code>blob:</code> URI on your machine.</li>
+          <li><strong>Direct Download:</strong> Clicking "Download PDF" saves the file directly from your RAM to your device storage.</li>
+          <li><strong>Automatic Memory Cleanup:</strong> Closing the tab or navigating away immediately garbage-collects all image buffers. Zero bytes were transmitted across the internet.</li>
+        </ol>
+      </section>
 
-      <h2 class="text-lg font-bold text-neutral-950 dark:text-white pt-4">2. Comparison with Competitors</h2>
-      <p>
-        Services such as iLovePDF, Smallpdf, and similar legacy platforms typically transfer your files over the public internet to remote cloud storage clusters, convert them on backend servers, and delete them on an automated timer. Even with encryption, this introduces third-party risk, ISP logging, and data interception vectors.
-      </p>
-      <p>
-        With OnlineImageToPdf.com, because there is no server upload, there is <strong>zero risk of server breaches, data leaks, or unauthorized retention</strong>.
-      </p>
+      <section>
+        <h2 class="text-xl sm:text-2xl font-bold text-neutral-950 dark:text-white mb-3">2. Comparison With Legacy Cloud Converters</h2>
+        <p>
+          Major platforms like iLovePDF, Smallpdf, and similar cloud services operate on a client-to-server model. Your files travel over the public internet to their remote servers, sit in temporary cloud buckets, and undergo server-side processing before download.
+        </p>
+        <p class="mt-3">
+          Even when cloud services claim automated deletion after a few hours, server-side storage creates unavoidable vulnerabilities: man-in-the-middle risks, remote data breach exposures, ISP logging, and employee access risks. Because OnlineImageToPdf.com performs zero server uploads, <strong>these vulnerabilities simply do not exist</strong>.
+        </p>
+      </section>
 
-      <h2 class="text-lg font-bold text-neutral-950 dark:text-white pt-4">3. Analytical Data</h2>
-      <p>
-        We do not sell, rent, or monetize your personal information. We do not use third-party behavioral tracker cookies or fingerprinting scripts.
-      </p>
+      <section>
+        <h2 class="text-xl sm:text-2xl font-bold text-neutral-950 dark:text-white mb-3">3. Cookies and Local Storage Usage</h2>
+        <p>
+          We respect your digital footprint:
+        </p>
+        <ul class="list-disc pl-5 space-y-2 text-neutral-700 dark:text-neutral-300 mt-2">
+          <li><strong>No Tracking Cookies:</strong> We do not set third-party cross-site advertising trackers, behavioral cookies, or user fingerprinting scripts.</li>
+          <li><strong>Theme Preferences:</strong> We use browser <code>localStorage</code> solely to remember your chosen visual theme (Dark Mode or Light Mode) between page visits.</li>
+          <li><strong>Zero Account Cookies:</strong> Our tools require no registration, sign-in, or session authentication cookies.</li>
+        </ul>
+      </section>
 
-      <h2 class="text-lg font-bold text-neutral-950 dark:text-white pt-4">4. GDPR and CCPA Compliance</h2>
-      <p>
-        Because we never collect, store, or process your personal files or personal identifiers on our servers, our service is inherently compliant with global data privacy frameworks including the EU General Data Protection Regulation (GDPR) and California Consumer Privacy Act (CCPA).
-      </p>
+      <section>
+        <h2 class="text-xl sm:text-2xl font-bold text-neutral-950 dark:text-white mb-3">4. GDPR Compliance (EU General Data Protection Regulation)</h2>
+        <p>
+          Under the General Data Protection Regulation (GDPR), we do not act as a data processor or data controller for your document contents because we never collect, receive, or store your documents. Because no personal data is transferred to external servers:
+        </p>
+        <ul class="list-disc pl-5 space-y-2 text-neutral-700 dark:text-neutral-300 mt-2">
+          <li>Your rights under GDPR (Articles 15 through 22, including the Right to Access, Right to Rectification, and Right to Erasure / "Right to be Forgotten") are inherently protected because no personal data resides on our infrastructure.</li>
+          <li>Zero cross-border personal data transfers occur when processing your documents.</li>
+        </ul>
+      </section>
 
-      <div class="mt-8 pt-6 border-t border-neutral-200 dark:border-neutral-800">
+      <section>
+        <h2 class="text-xl sm:text-2xl font-bold text-neutral-950 dark:text-white mb-3">5. CCPA / CPRA Compliance (California Consumer Privacy Act)</h2>
+        <p>
+          In accordance with the California Consumer Privacy Act (CCPA) and California Privacy Rights Act (CPRA):
+        </p>
+        <ul class="list-disc pl-5 space-y-2 text-neutral-700 dark:text-neutral-300 mt-2">
+          <li>We do NOT sell, rent, disclose, or share your personal information with third parties.</li>
+          <li>We collect no identifiers, biometric information, commercial history, or geolocation data.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2 class="text-xl sm:text-2xl font-bold text-neutral-950 dark:text-white mb-3">6. Children's Online Privacy Protection (COPPA)</h2>
+        <p>
+          OnlineImageToPdf.com is accessible to general audiences. We do not knowingly collect or solicit personal information from children under the age of 13. Since no personal data or files are harvested from any user, our service is fully aligned with COPPA standards.
+        </p>
+      </section>
+
+      <section>
+        <h2 class="text-xl sm:text-2xl font-bold text-neutral-950 dark:text-white mb-3">7. Policy Changes &amp; Inquiries</h2>
+        <p>
+          We may update this Privacy Policy periodically to reflect technological improvements or regulatory developments. Any amendments will be reflected on this page with an updated "Last Updated" timestamp.
+        </p>
+        <p class="mt-3">
+          If you have questions, inquiries, or security disclosures regarding this policy, please reach out directly:
+        </p>
+        <div class="mt-3 p-4 rounded-xl bg-neutral-50 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 text-xs sm:text-sm font-mono">
+          <p>OnlineImageToPdf Data Protection Team</p>
+          <p class="mt-1">Email: <a href="mailto:privacy@onlineimagetopdf.com" class="text-blue-600 dark:text-blue-400 underline">privacy@onlineimagetopdf.com</a></p>
+          <p class="mt-1">Inquiry Form: <a href="/contact" class="text-blue-600 dark:text-blue-400 underline">https://onlineimagetopdf.com/contact</a></p>
+        </div>
+      </section>
+
+      <!-- Navigation Footnote -->
+      <div class="mt-12 pt-6 border-t border-neutral-200 dark:border-neutral-800 flex flex-wrap items-center justify-between gap-4">
         <a href="/" class="text-blue-600 dark:text-blue-400 hover:underline font-bold text-xs inline-flex items-center gap-1">
           ← Back to converter tools
         </a>
+        <div class="flex items-center gap-4 text-xs text-neutral-600 dark:text-neutral-400">
+          <a href="/about" class="hover:text-neutral-950 dark:hover:text-white underline">About Us</a>
+          <span>•</span>
+          <a href="/terms" class="hover:text-neutral-950 dark:hover:text-white underline">Terms &amp; Conditions</a>
+          <span>•</span>
+          <a href="/contact" class="hover:text-neutral-950 dark:hover:text-white underline">Contact Us</a>
+        </div>
       </div>
     </div>
   </div>
