@@ -2,7 +2,7 @@
 import { CATEGORIES } from '../data/tools';
 ---
 
-<header class="sticky top-0 z-50 w-full border-b border-neutral-200 dark:border-neutral-800 bg-white/95 dark:bg-black/95 backdrop-blur-md transition-colors">
+<header class="sticky top-0 z-50 w-full border-b border-neutral-200/90 dark:border-neutral-800 bg-white/95 dark:bg-black/95 backdrop-blur-md transition-colors shadow-2xs">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between gap-2">
     <!-- Brand Logo -->
     <div class="flex items-center gap-6">
@@ -19,36 +19,36 @@ import { CATEGORIES } from '../data/tools';
         <div class="flex flex-col">
           <span class="font-bold text-sm tracking-tight text-neutral-950 dark:text-white flex items-center gap-1.5">
             Image To Pdf
-            <span class="text-[10px] px-1.5 py-0.2 rounded bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300 font-mono font-medium">v1.0</span>
+            <span class="text-[10px] px-1.5 py-0.2 rounded bg-neutral-100 dark:bg-neutral-800 text-neutral-800 dark:text-neutral-200 border border-neutral-300/80 dark:border-neutral-700 font-mono font-semibold">v1.0</span>
           </span>
-          <span class="text-[10px] text-neutral-500 dark:text-neutral-400 font-mono -mt-0.5">onlineimagetopdf.com</span>
+          <span class="text-[10px] text-neutral-600 dark:text-neutral-400 font-mono font-medium -mt-0.5">onlineimagetopdf.com</span>
         </div>
       </a>
 
       <!-- Desktop Nav (Hidden on Mobile/Tablet) -->
       <nav class="hidden lg:flex items-center gap-1 text-xs" aria-label="Main Navigation">
-        <a href="/" class="px-3 py-1.5 rounded-full text-neutral-700 dark:text-neutral-300 hover:text-neutral-950 dark:hover:text-white hover:bg-neutral-100 dark:hover:bg-neutral-900 transition-colors font-semibold">
+        <a href="/" class="px-3 py-1.5 rounded-full text-neutral-800 dark:text-neutral-200 hover:text-neutral-950 dark:hover:text-white hover:bg-neutral-100 dark:hover:bg-neutral-900 transition-colors font-bold">
           Home
         </a>
-        <a href="/#tools-organize" class="px-3 py-1.5 rounded-full text-neutral-700 dark:text-neutral-300 hover:text-neutral-950 dark:hover:text-white hover:bg-neutral-100 dark:hover:bg-neutral-900 transition-colors font-medium">
+        <a href="/#tools-organize" class="px-3 py-1.5 rounded-full text-neutral-800 dark:text-neutral-200 hover:text-neutral-950 dark:hover:text-white hover:bg-neutral-100 dark:hover:bg-neutral-900 transition-colors font-semibold">
           Organize
         </a>
-        <a href="/#tools-optimize" class="px-3 py-1.5 rounded-full text-neutral-700 dark:text-neutral-300 hover:text-neutral-950 dark:hover:text-white hover:bg-neutral-100 dark:hover:bg-neutral-900 transition-colors font-medium">
+        <a href="/#tools-optimize" class="px-3 py-1.5 rounded-full text-neutral-800 dark:text-neutral-200 hover:text-neutral-950 dark:hover:text-white hover:bg-neutral-100 dark:hover:bg-neutral-900 transition-colors font-semibold">
           Optimize
         </a>
-        <a href="/#tools-convert-to-pdf" class="px-3 py-1.5 rounded-full text-neutral-950 dark:text-white bg-neutral-100 dark:bg-neutral-900 font-semibold border border-neutral-200 dark:border-neutral-800">
+        <a href="/#tools-convert-to-pdf" class="px-3 py-1.5 rounded-full text-neutral-950 dark:text-white bg-neutral-100 dark:bg-neutral-900 font-bold border border-neutral-300 dark:border-neutral-700 shadow-2xs">
           Convert to PDF
         </a>
-        <a href="/#tools-convert-from-pdf" class="px-3 py-1.5 rounded-full text-neutral-700 dark:text-neutral-300 hover:text-neutral-950 dark:hover:text-white hover:bg-neutral-100 dark:hover:bg-neutral-900 transition-colors font-medium">
+        <a href="/#tools-convert-from-pdf" class="px-3 py-1.5 rounded-full text-neutral-800 dark:text-neutral-200 hover:text-neutral-950 dark:hover:text-white hover:bg-neutral-100 dark:hover:bg-neutral-900 transition-colors font-semibold">
           Convert from PDF
         </a>
-        <a href="/#tools-edit" class="px-2.5 py-1.5 rounded-full text-neutral-700 dark:text-neutral-300 hover:text-neutral-950 dark:hover:text-white hover:bg-neutral-100 dark:hover:bg-neutral-900 transition-colors font-medium">
+        <a href="/#tools-edit" class="px-2.5 py-1.5 rounded-full text-neutral-800 dark:text-neutral-200 hover:text-neutral-950 dark:hover:text-white hover:bg-neutral-100 dark:hover:bg-neutral-900 transition-colors font-semibold">
           Edit PDF
         </a>
-        <a href="/about" class="px-2.5 py-1.5 rounded-full text-neutral-700 dark:text-neutral-300 hover:text-neutral-950 dark:hover:text-white hover:bg-neutral-100 dark:hover:bg-neutral-900 transition-colors font-medium">
+        <a href="/about" class="px-2.5 py-1.5 rounded-full text-neutral-800 dark:text-neutral-200 hover:text-neutral-950 dark:hover:text-white hover:bg-neutral-100 dark:hover:bg-neutral-900 transition-colors font-semibold">
           About
         </a>
-        <a href="/contact" class="px-2.5 py-1.5 rounded-full text-neutral-700 dark:text-neutral-300 hover:text-neutral-950 dark:hover:text-white hover:bg-neutral-100 dark:hover:bg-neutral-900 transition-colors font-medium">
+        <a href="/contact" class="px-2.5 py-1.5 rounded-full text-neutral-800 dark:text-neutral-200 hover:text-neutral-950 dark:hover:text-white hover:bg-neutral-100 dark:hover:bg-neutral-900 transition-colors font-semibold">
           Contact
         </a>
       </nav>
@@ -57,7 +57,7 @@ import { CATEGORIES } from '../data/tools';
     <!-- Right Utility Bar -->
     <div class="flex items-center gap-2 sm:gap-3 shrink-0">
       <!-- Privacy Badge (hidden on small mobile) -->
-      <div class="hidden sm:inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-800 dark:text-emerald-300 text-xs font-mono font-medium">
+      <div class="hidden sm:inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-50 dark:bg-emerald-500/10 border border-emerald-300 dark:border-emerald-500/30 text-emerald-900 dark:text-emerald-300 text-xs font-mono font-bold">
         <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
         Zero Server Uploads
       </div>
@@ -67,7 +67,7 @@ import { CATEGORIES } from '../data/tools';
         id="theme-toggle"
         type="button"
         aria-label="Toggle theme"
-        class="p-2 rounded-full border border-neutral-200 dark:border-neutral-800 text-neutral-700 dark:text-neutral-300 hover:text-neutral-950 dark:hover:text-white hover:bg-neutral-100 dark:hover:bg-neutral-900 transition-colors cursor-pointer"
+        class="p-2 rounded-full border border-neutral-300 dark:border-neutral-700 bg-white dark:bg-neutral-900 text-neutral-800 dark:text-neutral-200 hover:text-neutral-950 dark:hover:text-white hover:bg-neutral-100 dark:hover:bg-neutral-800 shadow-2xs transition-colors cursor-pointer"
       >
         <!-- Sun icon (shown in dark mode) -->
         <svg class="w-4 h-4 hidden dark:block" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -82,7 +82,7 @@ import { CATEGORIES } from '../data/tools';
       <!-- Primary CTA button -->
       <a
         href="/#converter-section"
-        class="hidden xs:inline-flex items-center justify-center px-3.5 sm:px-4 py-1.5 rounded-full bg-neutral-950 dark:bg-white text-white dark:text-neutral-950 text-xs font-semibold hover:bg-neutral-800 dark:hover:bg-neutral-100 transition-all cursor-pointer shadow-xs active:scale-[0.98]"
+        class="hidden xs:inline-flex items-center justify-center px-3.5 sm:px-4 py-1.5 rounded-full bg-neutral-950 dark:bg-white text-white dark:text-neutral-950 text-xs font-bold hover:bg-neutral-800 dark:hover:bg-neutral-100 transition-all cursor-pointer shadow-xs active:scale-[0.98]"
       >
         Convert Images
       </a>
@@ -94,7 +94,7 @@ import { CATEGORIES } from '../data/tools';
         aria-expanded="false"
         aria-label="Toggle navigation menu"
         aria-controls="mobile-menu"
-        class="lg:hidden p-2 rounded-lg border border-neutral-200 dark:border-neutral-800 text-neutral-700 dark:text-neutral-300 hover:text-neutral-950 dark:hover:text-white hover:bg-neutral-100 dark:hover:bg-neutral-900 transition-colors cursor-pointer"
+        class="lg:hidden p-2 rounded-lg border border-neutral-300 dark:border-neutral-800 text-neutral-800 dark:text-neutral-200 hover:text-neutral-950 dark:hover:text-white hover:bg-neutral-100 dark:hover:bg-neutral-900 transition-colors cursor-pointer"
       >
         <!-- Hamburger Bars Icon -->
         <svg id="icon-menu" class="w-5 h-5 block" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -114,47 +114,47 @@ import { CATEGORIES } from '../data/tools';
   <!-- Mobile Dropdown Navigation Drawer -->
   <div
     id="mobile-menu"
-    class="hidden lg:hidden border-b border-neutral-200 dark:border-neutral-800 bg-white dark:bg-black px-4 py-4 space-y-4 max-h-[85vh] overflow-y-auto transition-all"
+    class="hidden lg:hidden border-b border-neutral-300 dark:border-neutral-800 bg-white dark:bg-black px-4 py-4 space-y-4 max-h-[85vh] overflow-y-auto transition-all shadow-md"
   >
     <!-- Privacy indicator on mobile -->
-    <div class="flex sm:hidden items-center justify-between p-2.5 rounded-lg bg-emerald-500/10 border border-emerald-500/30 text-emerald-800 dark:text-emerald-300 text-xs font-mono font-medium">
+    <div class="flex sm:hidden items-center justify-between p-2.5 rounded-lg bg-emerald-50 dark:bg-emerald-500/10 border border-emerald-300 dark:border-emerald-500/30 text-emerald-900 dark:text-emerald-300 text-xs font-mono font-bold">
       <span class="flex items-center gap-2">
         <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
         Zero Server Uploads
       </span>
-      <span class="text-[11px] text-emerald-700 dark:text-emerald-400">100% Local</span>
+      <span class="text-[11px] text-emerald-800 dark:text-emerald-400 font-bold">100% Local</span>
     </div>
 
     <!-- Quick Tool Shortcuts -->
     <div>
-      <p class="text-[11px] font-mono font-semibold uppercase tracking-wider text-neutral-500 dark:text-neutral-400 mb-2">
+      <p class="text-[11px] font-mono font-bold uppercase tracking-wider text-neutral-600 dark:text-neutral-400 mb-2">
         Quick Tools
       </p>
       <div class="grid grid-cols-2 gap-2 text-xs">
         <a
           href="/tools/image-to-pdf"
-          class="mobile-nav-link flex items-center gap-2 p-2.5 rounded-xl bg-neutral-50 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 text-neutral-900 dark:text-white font-medium hover:border-neutral-400 transition-colors"
+          class="mobile-nav-link flex items-center gap-2 p-2.5 rounded-xl bg-neutral-50 dark:bg-neutral-900 border border-neutral-300 dark:border-neutral-800 text-neutral-950 dark:text-white font-bold hover:border-neutral-400 transition-colors shadow-2xs"
         >
           <span class="w-2 h-2 rounded-full bg-blue-500"></span>
           Image to PDF
         </a>
         <a
           href="/tools/merge-pdf"
-          class="mobile-nav-link flex items-center gap-2 p-2.5 rounded-xl bg-neutral-50 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 text-neutral-900 dark:text-white font-medium hover:border-neutral-400 transition-colors"
+          class="mobile-nav-link flex items-center gap-2 p-2.5 rounded-xl bg-neutral-50 dark:bg-neutral-900 border border-neutral-300 dark:border-neutral-800 text-neutral-950 dark:text-white font-bold hover:border-neutral-400 transition-colors shadow-2xs"
         >
           <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
           Merge PDF
         </a>
         <a
           href="/tools/split-pdf"
-          class="mobile-nav-link flex items-center gap-2 p-2.5 rounded-xl bg-neutral-50 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 text-neutral-900 dark:text-white font-medium hover:border-neutral-400 transition-colors"
+          class="mobile-nav-link flex items-center gap-2 p-2.5 rounded-xl bg-neutral-50 dark:bg-neutral-900 border border-neutral-300 dark:border-neutral-800 text-neutral-950 dark:text-white font-bold hover:border-neutral-400 transition-colors shadow-2xs"
         >
           <span class="w-2 h-2 rounded-full bg-purple-500"></span>
           Split PDF
         </a>
         <a
           href="/tools/rotate-pdf-pages"
-          class="mobile-nav-link flex items-center gap-2 p-2.5 rounded-xl bg-neutral-50 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 text-neutral-900 dark:text-white font-medium hover:border-neutral-400 transition-colors"
+          class="mobile-nav-link flex items-center gap-2 p-2.5 rounded-xl bg-neutral-50 dark:bg-neutral-900 border border-neutral-300 dark:border-neutral-800 text-neutral-950 dark:text-white font-bold hover:border-neutral-400 transition-colors shadow-2xs"
         >
           <span class="w-2 h-2 rounded-full bg-amber-500"></span>
           Rotate PDF
@@ -163,76 +163,76 @@ import { CATEGORIES } from '../data/tools';
     </div>
 
     <!-- Category Links (Min 44px touch height) -->
-    <div class="pt-2 border-t border-neutral-100 dark:border-neutral-800">
-      <p class="text-[11px] font-mono font-semibold uppercase tracking-wider text-neutral-500 dark:text-neutral-400 mb-1">
+    <div class="pt-2 border-t border-neutral-200 dark:border-neutral-800">
+      <p class="text-[11px] font-mono font-bold uppercase tracking-wider text-neutral-600 dark:text-neutral-400 mb-1">
         Browse by Category
       </p>
       <nav class="space-y-1">
         <a
           href="/#tools-organize"
-          class="mobile-nav-link flex items-center justify-between min-h-[44px] px-3 rounded-lg text-sm font-semibold text-neutral-800 dark:text-neutral-200 hover:bg-neutral-100 dark:hover:bg-neutral-900"
+          class="mobile-nav-link flex items-center justify-between min-h-[44px] px-3 rounded-lg text-sm font-bold text-neutral-900 dark:text-neutral-200 hover:bg-neutral-100 dark:hover:bg-neutral-900"
         >
           <span>1. Organize PDF</span>
-          <span class="text-xs text-neutral-500 font-mono font-normal">5 tools →</span>
+          <span class="text-xs text-neutral-600 dark:text-neutral-400 font-mono font-medium">5 tools →</span>
         </a>
         <a
           href="/#tools-optimize"
-          class="mobile-nav-link flex items-center justify-between min-h-[44px] px-3 rounded-lg text-sm font-semibold text-neutral-800 dark:text-neutral-200 hover:bg-neutral-100 dark:hover:bg-neutral-900"
+          class="mobile-nav-link flex items-center justify-between min-h-[44px] px-3 rounded-lg text-sm font-bold text-neutral-900 dark:text-neutral-200 hover:bg-neutral-100 dark:hover:bg-neutral-900"
         >
           <span>2. Optimize PDF</span>
-          <span class="text-xs text-neutral-500 font-mono font-normal">3 tools →</span>
+          <span class="text-xs text-neutral-600 dark:text-neutral-400 font-mono font-medium">3 tools →</span>
         </a>
         <a
           href="/#tools-convert-to-pdf"
-          class="mobile-nav-link flex items-center justify-between min-h-[44px] px-3 rounded-lg text-sm font-semibold text-neutral-900 dark:text-white hover:bg-neutral-100 dark:hover:bg-neutral-900"
+          class="mobile-nav-link flex items-center justify-between min-h-[44px] px-3 rounded-lg text-sm font-bold text-neutral-950 dark:text-white hover:bg-neutral-100 dark:hover:bg-neutral-900"
         >
-          <span class="text-blue-600 dark:text-blue-400">3. Convert to PDF</span>
-          <span class="text-xs text-neutral-500 font-mono font-normal">7 tools →</span>
+          <span class="text-blue-700 dark:text-blue-400 font-bold">3. Convert to PDF</span>
+          <span class="text-xs text-neutral-600 dark:text-neutral-400 font-mono font-medium">7 tools →</span>
         </a>
         <a
           href="/#tools-convert-from-pdf"
-          class="mobile-nav-link flex items-center justify-between min-h-[44px] px-3 rounded-lg text-sm font-semibold text-neutral-800 dark:text-neutral-200 hover:bg-neutral-100 dark:hover:bg-neutral-900"
+          class="mobile-nav-link flex items-center justify-between min-h-[44px] px-3 rounded-lg text-sm font-bold text-neutral-900 dark:text-neutral-200 hover:bg-neutral-100 dark:hover:bg-neutral-900"
         >
           <span>4. Convert from PDF</span>
-          <span class="text-xs text-neutral-500 font-mono font-normal">3 tools →</span>
+          <span class="text-xs text-neutral-600 dark:text-neutral-400 font-mono font-medium">3 tools →</span>
         </a>
         <a
           href="/#tools-edit"
-          class="mobile-nav-link flex items-center justify-between min-h-[44px] px-3 rounded-lg text-sm font-semibold text-neutral-800 dark:text-neutral-200 hover:bg-neutral-100 dark:hover:bg-neutral-900"
+          class="mobile-nav-link flex items-center justify-between min-h-[44px] px-3 rounded-lg text-sm font-bold text-neutral-900 dark:text-neutral-200 hover:bg-neutral-100 dark:hover:bg-neutral-900"
         >
           <span>5. Edit PDF</span>
-          <span class="text-xs text-neutral-500 font-mono font-normal">7 tools →</span>
+          <span class="text-xs text-neutral-600 dark:text-neutral-400 font-mono font-medium">7 tools →</span>
         </a>
       </nav>
     </div>
 
     <!-- Company & Legal Navigation -->
-    <div class="pt-3 border-t border-neutral-100 dark:border-neutral-800">
-      <p class="text-[11px] font-mono font-semibold uppercase tracking-wider text-neutral-500 dark:text-neutral-400 mb-2">
+    <div class="pt-3 border-t border-neutral-200 dark:border-neutral-800">
+      <p class="text-[11px] font-mono font-bold uppercase tracking-wider text-neutral-600 dark:text-neutral-400 mb-2">
         Company &amp; Legal
       </p>
       <div class="grid grid-cols-2 gap-2 text-xs">
         <a
           href="/about"
-          class="mobile-nav-link p-2.5 rounded-xl bg-neutral-50 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 text-neutral-800 dark:text-neutral-200 hover:text-neutral-950 dark:hover:text-white font-medium"
+          class="mobile-nav-link p-2.5 rounded-xl bg-neutral-50 dark:bg-neutral-900 border border-neutral-300 dark:border-neutral-800 text-neutral-900 dark:text-neutral-200 hover:text-neutral-950 dark:hover:text-white font-bold"
         >
           About Us
         </a>
         <a
           href="/contact"
-          class="mobile-nav-link p-2.5 rounded-xl bg-neutral-50 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 text-neutral-800 dark:text-neutral-200 hover:text-neutral-950 dark:hover:text-white font-medium"
+          class="mobile-nav-link p-2.5 rounded-xl bg-neutral-50 dark:bg-neutral-900 border border-neutral-300 dark:border-neutral-800 text-neutral-900 dark:text-neutral-200 hover:text-neutral-950 dark:hover:text-white font-bold"
         >
           Contact Us
         </a>
         <a
           href="/privacy"
-          class="mobile-nav-link p-2.5 rounded-xl bg-neutral-50 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 text-neutral-800 dark:text-neutral-200 hover:text-neutral-950 dark:hover:text-white font-medium"
+          class="mobile-nav-link p-2.5 rounded-xl bg-neutral-50 dark:bg-neutral-900 border border-neutral-300 dark:border-neutral-800 text-neutral-900 dark:text-neutral-200 hover:text-neutral-950 dark:hover:text-white font-bold"
         >
           Privacy Policy
         </a>
         <a
           href="/terms"
-          class="mobile-nav-link p-2.5 rounded-xl bg-neutral-50 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 text-neutral-800 dark:text-neutral-200 hover:text-neutral-950 dark:hover:text-white font-medium"
+          class="mobile-nav-link p-2.5 rounded-xl bg-neutral-50 dark:bg-neutral-900 border border-neutral-300 dark:border-neutral-800 text-neutral-900 dark:text-neutral-200 hover:text-neutral-950 dark:hover:text-white font-bold"
         >
           Terms &amp; Conditions
         </a>
@@ -243,7 +243,7 @@ import { CATEGORIES } from '../data/tools';
     <div class="pt-2">
       <a
         href="/#converter-section"
-        class="mobile-nav-link w-full min-h-[44px] flex items-center justify-center gap-2 rounded-full bg-neutral-950 dark:bg-white text-white dark:text-neutral-950 text-xs font-semibold hover:opacity-90 transition-all shadow-xs"
+        class="mobile-nav-link w-full min-h-[44px] flex items-center justify-center gap-2 rounded-full bg-neutral-950 dark:bg-white text-white dark:text-neutral-950 text-xs font-bold hover:bg-neutral-800 dark:hover:bg-neutral-100 transition-all shadow-xs"
       >
         Launch Image to PDF Converter
       </a>

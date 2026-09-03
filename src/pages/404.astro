@@ -1,0 +1,373 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ToolCard from '../components/ToolCard.astro';
+import { TOOLS } from '../data/tools';
+
+const pageTitle = "404: Page Not Found — Image To Pdf";
+const pageDescription = "The page or document utility you are looking for cannot be found. Return to our free image to PDF converter or search our full suite of client-side PDF tools.";
+const canonicalUrl = "https://onlineimagetopdf.com/404";
+
+// Select top 4 functional popular tools for quick recommendations
+const popularTools = TOOLS.filter(
+  (t) => t.isFunctional && ['image-to-pdf', 'jpg-to-pdf', 'merge-pdf', 'split-pdf'].includes(t.slug)
+);
+
+// Pre-serialized list for the client-side instant search
+const searchableTools = TOOLS.map((t) => ({
+  name: t.name,
+  slug: t.slug,
+  category: t.category.replace(/-/g, ' '),
+  description: t.description,
+  badge: t.badge || (t.isFunctional ? 'Active' : 'Roadmap'),
+  isFunctional: t.isFunctional,
+}));
+---
+
+<Layout
+  title={pageTitle}
+  description={pageDescription}
+  canonicalUrl={canonicalUrl}
+  robots="noindex, nofollow"
+>
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 py-8 sm:py-12 md:py-16">
+    <!-- Breadcrumb Navigation -->
+    <nav aria-label="Breadcrumb" class="mb-8 flex items-center gap-2 text-xs text-neutral-600 dark:text-neutral-400 font-mono">
+      <a href="/" class="hover:text-neutral-950 dark:hover:text-white transition-colors">Home</a>
+      <span>/</span>
+      <span class="text-neutral-900 dark:text-neutral-200 font-semibold" aria-current="page">404 Error</span>
+    </nav>
+
+    <!-- Main 404 Card Hero -->
+    <div class="relative overflow-hidden rounded-3xl border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-950 p-6 sm:p-10 md:p-14 shadow-xs text-center">
+      <!-- Decorative Background Grid Accent -->
+      <div class="absolute inset-0 bg-grid-pattern opacity-40 pointer-events-none" aria-hidden="true"></div>
+      
+      <!-- Subtle Ambient Glow -->
+      <div class="absolute -top-24 left-1/2 -translate-x-1/2 w-96 h-96 bg-amber-500/10 dark:bg-amber-400/5 blur-3xl rounded-full pointer-events-none" aria-hidden="true"></div>
+
+      <div class="relative z-10 max-w-2xl mx-auto">
+        <!-- Status Pill Badge -->
+        <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-amber-100 dark:bg-amber-500/10 text-amber-900 dark:text-amber-300 border border-amber-300 dark:border-amber-500/20 text-xs font-mono font-bold mb-6">
+          <span class="relative flex h-2 w-2">
+            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-400 opacity-75"></span>
+            <span class="relative inline-flex rounded-full h-2 w-2 bg-amber-500"></span>
+          </span>
+          <span>HTTP 404 • Page Not Found</span>
+        </div>
+
+        <!-- Big 404 Glyph & Graphic -->
+        <div class="flex items-center justify-center gap-3 sm:gap-4 my-2 select-none">
+          <span class="font-mono text-7xl sm:text-8xl md:text-9xl font-black tracking-tighter text-neutral-900 dark:text-white leading-none">
+            4
+          </span>
+          <div class="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 rounded-2xl bg-neutral-100 dark:bg-neutral-900 border border-neutral-300 dark:border-neutral-800 flex items-center justify-center shadow-inner text-amber-600 dark:text-amber-400">
+            <svg class="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"></path>
+              <polyline points="14 2 14 8 20 8"></polyline>
+              <line x1="9" y1="15" x2="15" y2="15"></line>
+              <line x1="12" y1="12" x2="12" y2="12.01"></line>
+            </svg>
+          </div>
+          <span class="font-mono text-7xl sm:text-8xl md:text-9xl font-black tracking-tighter text-neutral-900 dark:text-white leading-none">
+            4
+          </span>
+        </div>
+
+        <!-- Headings & Explanatory Text -->
+        <h1 class="text-2xl sm:text-3xl md:text-4xl font-extrabold tracking-tight text-neutral-950 dark:text-white mt-4">
+          The requested page could not be located
+        </h1>
+        <p class="mt-3 text-sm sm:text-base text-neutral-600 dark:text-neutral-400 leading-relaxed max-w-lg mx-auto">
+          The link you followed may be expired, mistyped, or reorganized. Rest assured, your local files and browser conversions are completely unaffected.
+        </p>
+
+        <!-- Primary Action Buttons -->
+        <div class="mt-8 flex flex-wrap items-center justify-center gap-3">
+          <a
+            href="/"
+            class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-neutral-950 dark:bg-white text-white dark:text-neutral-950 font-bold text-xs sm:text-sm shadow-xs hover:bg-neutral-800 dark:hover:bg-neutral-200 transition-all hover:scale-[1.02]"
+          >
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+              <polyline points="9 22 9 12 15 12 15 22"></polyline>
+            </svg>
+            <span>Back to Converter</span>
+          </a>
+
+          <a
+            href="/#tools-organize"
+            class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white dark:bg-neutral-900 border border-neutral-300 dark:border-neutral-700 text-neutral-900 dark:text-neutral-100 font-bold text-xs sm:text-sm hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-all"
+          >
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="3" width="7" height="7"></rect>
+              <rect x="14" y="3" width="7" height="7"></rect>
+              <rect x="14" y="14" width="7" height="7"></rect>
+              <rect x="3" y="14" width="7" height="7"></rect>
+            </svg>
+            <span>Browse All Tools</span>
+          </a>
+
+          <button
+            type="button"
+            id="back-history-btn"
+            class="inline-flex items-center gap-2 px-4 py-2.5 rounded-full text-neutral-600 dark:text-neutral-400 hover:text-neutral-950 dark:hover:text-white text-xs sm:text-sm font-semibold transition-colors cursor-pointer"
+          >
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="19" y1="12" x2="5" y2="12"></line>
+              <polyline points="12 19 5 12 12 5"></polyline>
+            </svg>
+            <span>Previous Page</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Interactive Instant Tool Search -->
+    <div class="mt-10 p-6 sm:p-8 rounded-2xl border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-900 shadow-xs">
+      <div class="max-w-2xl mx-auto text-center mb-5">
+        <h2 class="text-lg sm:text-xl font-bold text-neutral-950 dark:text-white">
+          Were you looking for a specific tool?
+        </h2>
+        <p class="text-xs sm:text-sm text-neutral-600 dark:text-neutral-400 mt-1">
+          Type any conversion keyword below to jump straight to the tool.
+        </p>
+      </div>
+
+      <div class="max-w-xl mx-auto relative">
+        <div class="relative flex items-center">
+          <svg class="w-4 h-4 text-neutral-400 absolute left-3.5 pointer-events-none" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+          <input
+            type="search"
+            id="tool-search-input"
+            placeholder="Search tools (e.g. compress, jpg, merge, heic, split, word)..."
+            autocomplete="off"
+            class="w-full pl-10 pr-10 py-2.5 text-xs sm:text-sm rounded-xl border border-neutral-300 dark:border-neutral-700 bg-neutral-50 dark:bg-neutral-950 text-neutral-900 dark:text-neutral-100 placeholder-neutral-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+          />
+          <button
+            type="button"
+            id="clear-search-btn"
+            aria-label="Clear search"
+            class="hidden absolute right-3 text-neutral-400 hover:text-neutral-700 dark:hover:text-neutral-200 text-xs font-mono p-1"
+          >
+            ✕
+          </button>
+        </div>
+
+        <!-- Quick Filter Tags -->
+        <div class="mt-3 flex flex-wrap items-center justify-center gap-1.5 text-xs">
+          <span class="text-neutral-600 dark:text-neutral-400 text-[11px] font-mono font-medium mr-1">Suggestions:</span>
+          {['Image to PDF', 'JPG to PDF', 'Merge PDF', 'Compress PDF', 'HEIC to PDF', 'PDF to JPG'].map((tag) => (
+            <button
+              type="button"
+              class="quick-tag-btn px-2.5 py-1 rounded-full bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300 hover:bg-neutral-200 dark:hover:bg-neutral-700 text-[11px] font-mono transition-colors cursor-pointer border border-neutral-200 dark:border-neutral-700/60"
+              data-query={tag}
+            >
+              {tag}
+            </button>
+          ))}
+        </div>
+
+        <!-- Live Results Dropdown Container -->
+        <div
+          id="search-results-container"
+          class="hidden mt-3 rounded-xl border border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-950 shadow-lg divide-y divide-neutral-100 dark:divide-neutral-800/80 max-h-72 overflow-y-auto"
+        >
+          <!-- Dynamic Results Inserted via JS -->
+        </div>
+      </div>
+    </div>
+
+    <!-- Popular Tools Section -->
+    <div class="mt-12">
+      <div class="flex items-center justify-between mb-6">
+        <div>
+          <h2 class="text-lg sm:text-xl font-bold text-neutral-950 dark:text-white">
+            Popular Document Tools
+          </h2>
+          <p class="text-xs sm:text-sm text-neutral-600 dark:text-neutral-400">
+            Free, in-browser, and instant with zero file uploads.
+          </p>
+        </div>
+        <a
+          href="/#tools-convert-to-pdf"
+          class="text-xs font-semibold text-neutral-900 dark:text-neutral-200 hover:text-blue-600 dark:hover:text-blue-400 transition-colors inline-flex items-center gap-1"
+        >
+          <span>All 29 tools</span>
+          <span aria-hidden="true">→</span>
+        </a>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
+        {popularTools.map((tool) => (
+          <ToolCard tool={tool} />
+        ))}
+      </div>
+    </div>
+
+    <!-- Helpful Links & Support Cards -->
+    <div class="mt-12 pt-8 border-t border-neutral-200 dark:border-neutral-800 grid grid-cols-1 sm:grid-cols-3 gap-4 text-xs">
+      <div class="p-4 rounded-xl border border-neutral-200 dark:border-neutral-800 bg-neutral-50/50 dark:bg-neutral-900/40">
+        <div class="font-bold text-neutral-900 dark:text-neutral-100 flex items-center gap-2 mb-1">
+          <svg class="w-4 h-4 text-neutral-600 dark:text-neutral-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="10"></circle>
+            <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+            <line x1="12" y1="17" x2="12.01" y2="17"></line>
+          </svg>
+          <span>Have Questions?</span>
+        </div>
+        <p class="text-neutral-600 dark:text-neutral-400 mb-2 leading-relaxed">
+          Learn how our client-side engine converts documents without remote servers.
+        </p>
+        <a href="/#faq-section" class="font-semibold text-neutral-900 dark:text-neutral-200 hover:text-blue-600 dark:hover:text-blue-400">
+          Visit FAQ Guide →
+        </a>
+      </div>
+
+      <div class="p-4 rounded-xl border border-neutral-200 dark:border-neutral-800 bg-neutral-50/50 dark:bg-neutral-900/40">
+        <div class="font-bold text-neutral-900 dark:text-neutral-100 flex items-center gap-2 mb-1">
+          <svg class="w-4 h-4 text-neutral-600 dark:text-neutral-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+          </svg>
+          <span>100% Privacy</span>
+        </div>
+        <p class="text-neutral-600 dark:text-neutral-400 mb-2 leading-relaxed">
+          Your photos and confidential PDFs are processed locally on your hardware.
+        </p>
+        <a href="/privacy" class="font-semibold text-neutral-900 dark:text-neutral-200 hover:text-blue-600 dark:hover:text-blue-400">
+          Read Privacy Policy →
+        </a>
+      </div>
+
+      <div class="p-4 rounded-xl border border-neutral-200 dark:border-neutral-800 bg-neutral-50/50 dark:bg-neutral-900/40">
+        <div class="font-bold text-neutral-900 dark:text-neutral-100 flex items-center gap-2 mb-1">
+          <svg class="w-4 h-4 text-neutral-600 dark:text-neutral-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+            <polyline points="22,6 12,13 2,6"></polyline>
+          </svg>
+          <span>Found a Broken Link?</span>
+        </div>
+        <p class="text-neutral-600 dark:text-neutral-400 mb-2 leading-relaxed">
+          Report broken redirects or submit tool feature requests to our team.
+        </p>
+        <a href="/contact" class="font-semibold text-neutral-900 dark:text-neutral-200 hover:text-blue-600 dark:hover:text-blue-400">
+          Contact Developer Support →
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Searchable Tools Data & Client Search Logic -->
+  <script is:inline define:vars={{ searchableTools }}>
+    const input = document.getElementById('tool-search-input');
+    const container = document.getElementById('search-results-container');
+    const clearBtn = document.getElementById('clear-search-btn');
+    const backBtn = document.getElementById('back-history-btn');
+    const quickTags = document.querySelectorAll('.quick-tag-btn');
+
+    if (backBtn) {
+      backBtn.addEventListener('click', function () {
+        if (window.history.length > 1) {
+          window.history.back();
+        } else {
+          window.location.href = '/';
+        }
+      });
+    }
+
+    function runSearch(query) {
+      const q = (query || '').trim().toLowerCase();
+      if (!q) {
+        container.innerHTML = '';
+        container.classList.add('hidden');
+        if (clearBtn) clearBtn.classList.add('hidden');
+        return;
+      }
+
+      if (clearBtn) clearBtn.classList.remove('hidden');
+
+      const matches = searchableTools.filter(t => {
+        return (
+          t.name.toLowerCase().includes(q) ||
+          t.slug.toLowerCase().includes(q) ||
+          t.category.toLowerCase().includes(q) ||
+          t.description.toLowerCase().includes(q)
+        );
+      });
+
+      if (matches.length === 0) {
+        container.innerHTML = `
+          <div class="p-4 text-center text-xs text-neutral-600 dark:text-neutral-400">
+            No matching tool found for "<span class="font-mono text-neutral-900 dark:text-neutral-200 font-semibold">${escapeHtml(q)}</span>".
+            Try "jpg", "merge", or "compress".
+          </div>
+        `;
+        container.classList.remove('hidden');
+        return;
+      }
+
+      container.innerHTML = matches.slice(0, 6).map(tool => `
+        <a
+          href="/tools/${tool.slug}"
+          class="flex items-center justify-between p-3 sm:px-4 hover:bg-neutral-50 dark:hover:bg-neutral-900 transition-colors group"
+        >
+          <div class="pr-2">
+            <div class="flex items-center gap-2">
+              <span class="text-xs sm:text-sm font-bold text-neutral-950 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+                ${escapeHtml(tool.name)}
+              </span>
+              <span class="text-[10px] font-mono px-1.5 py-0.2 rounded font-semibold ${
+                tool.badge === 'Popular' 
+                  ? 'bg-blue-100 dark:bg-blue-500/10 text-blue-800 dark:text-blue-300' 
+                  : 'bg-neutral-100 dark:bg-neutral-800 text-neutral-700 dark:text-neutral-300'
+              }">
+                ${escapeHtml(tool.badge)}
+              </span>
+            </div>
+            <p class="text-[11px] text-neutral-600 dark:text-neutral-400 line-clamp-1 mt-0.5">
+              ${escapeHtml(tool.description)}
+            </p>
+          </div>
+          <span class="text-xs font-mono text-neutral-400 group-hover:text-neutral-950 dark:group-hover:text-white transition-colors shrink-0">
+            Open →
+          </span>
+        </a>
+      `).join('');
+
+      container.classList.remove('hidden');
+    }
+
+    function escapeHtml(str) {
+      const div = document.createElement('div');
+      div.textContent = str;
+      return div.innerHTML;
+    }
+
+    if (input) {
+      input.addEventListener('input', (e) => runSearch(e.target.value));
+    }
+
+    if (clearBtn) {
+      clearBtn.addEventListener('click', () => {
+        if (input) {
+          input.value = '';
+          input.focus();
+        }
+        runSearch('');
+      });
+    }
+
+    quickTags.forEach(tag => {
+      tag.addEventListener('click', () => {
+        const query = tag.getAttribute('data-query') || '';
+        if (input) {
+          input.value = query;
+          input.focus();
+        }
+        runSearch(query);
+      });
+    });
+  </script>
+</Layout>

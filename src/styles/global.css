@@ -1,17 +1,19 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 @layer base {
   :root {
-    --canvas: #ffffff;
-    --canvas-soft: #fafafa;
-    --canvas-subtle: #f5f5f5;
-    --ink: #111111;
-    --ink-secondary: #383838;
+    --canvas: #fafafa;
+    --canvas-soft: #f5f5f5;
+    --canvas-subtle: #eaeaea;
+    --ink: #0a0a0a;
+    --ink-secondary: #262626;
     --ink-muted: #525252;
-    --hairline: #e2e2e2;
-    --hairline-strong: #b8b8b8;
-    --accent-blue: #0070f3;
-    --accent-cyan: #00dfd8;
+    --hairline: #dcdcdc;
+    --hairline-strong: #9ca3af;
+    --accent-blue: #0060df;
+    --accent-cyan: #00a3bf;
     --accent-purple: #7928ca;
   }
 
@@ -45,8 +47,8 @@ html, body {
 .bg-grid-pattern {
   background-size: 32px 32px;
   background-image: 
-    linear-gradient(to right, rgba(0, 0, 0, 0.05) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(0, 0, 0, 0.05) 1px, transparent 1px);
+    linear-gradient(to right, rgba(0, 0, 0, 0.06) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.06) 1px, transparent 1px);
 }
 
 .dark .bg-grid-pattern {
@@ -57,7 +59,7 @@ html, body {
 
 /* Subtle glowing gradient banner effect */
 .vercel-gradient-text {
-  background: linear-gradient(135deg, #111111 0%, #3f3f46 100%);
+  background: linear-gradient(135deg, #0a0a0a 0%, #374151 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -69,7 +71,7 @@ html, body {
 }
 
 .vercel-blue-gradient {
-  background: linear-gradient(135deg, #0070f3 0%, #00a3bf 100%);
+  background: linear-gradient(135deg, #0052cc 0%, #0066f5 55%, #0085b3 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
