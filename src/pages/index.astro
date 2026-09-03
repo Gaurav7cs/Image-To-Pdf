@@ -1,0 +1,132 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ImageToPdfConverter from '../components/converter/ImageToPdfConverter';
+import CategorySection from '../components/CategorySection.astro';
+import PrivacyBanner from '../components/PrivacyBanner.astro';
+import FAQSection from '../components/FAQSection.astro';
+import ToolCard from '../components/ToolCard.astro';
+import { CATEGORIES, POPULAR_TOOLS } from '../data/tools';
+---
+
+<Layout
+  title="Image to PDF — Free Online Converter (100% Client-Side Private)"
+  description="Convert JPG, PNG, WebP, and HEIC images to PDF online directly in your browser. No file uploads to external servers. Fast, secure, and completely free document processing."
+>
+  <!-- Hero Section -->
+  <section class="relative pt-8 pb-14 sm:pt-14 sm:pb-20 overflow-hidden border-b border-neutral-200 dark:border-neutral-800 bg-radial from-neutral-100/60 via-transparent to-transparent dark:from-neutral-900/30">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <!-- Top Pill Badge -->
+      <div class="flex justify-center mb-5 sm:mb-6">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full border border-neutral-300 dark:border-neutral-700 bg-white dark:bg-neutral-900 shadow-xs text-xs font-mono text-neutral-800 dark:text-neutral-200 font-medium">
+          <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+          <span>Next-Gen Private PDF Processing</span>
+          <span class="text-neutral-400 dark:text-neutral-600">•</span>
+          <span class="text-neutral-700 dark:text-neutral-300 font-semibold">Zero Cloud Uploads</span>
+        </div>
+      </div>
+
+      <!-- Headline -->
+      <div class="text-center max-w-3xl mx-auto">
+        <h1 class="text-3xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-neutral-950 dark:text-white leading-[1.12]">
+          Convert Images to PDF.<br class="hidden sm:inline"/>
+          <span class="vercel-blue-gradient">Fast. Private. In Your Browser.</span>
+        </h1>
+        <p class="mt-4 text-sm sm:text-base md:text-lg text-neutral-700 dark:text-neutral-300 max-w-2xl mx-auto leading-relaxed">
+          The privacy-first document toolkit. Convert JPG, PNG, WebP, and HEIC images into standardized PDF files with full control over margins, orientation, and layout — without sending a single byte to remote servers.
+        </p>
+      </div>
+
+      <!-- Live Interactive Converter Area -->
+      <div id="converter-section" class="mt-8 sm:mt-12 scroll-mt-24">
+        <ImageToPdfConverter client:load />
+      </div>
+
+      <!-- Key Trust Proof Points -->
+      <div class="mt-8 sm:mt-10 pt-6 sm:pt-8 border-t border-neutral-200 dark:border-neutral-800 grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 text-center text-xs text-neutral-800 dark:text-neutral-200">
+        <div class="flex items-center justify-center gap-1.5 sm:gap-2">
+          <svg class="w-4 h-4 text-emerald-600 dark:text-emerald-400 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <polyline points="20 6 9 17 4 12"></polyline>
+          </svg>
+          <span class="font-bold">100% Client-Side Engine</span>
+        </div>
+        <div class="flex items-center justify-center gap-1.5 sm:gap-2">
+          <svg class="w-4 h-4 text-emerald-600 dark:text-emerald-400 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <polyline points="20 6 9 17 4 12"></polyline>
+          </svg>
+          <span class="font-bold">No File Size Limits</span>
+        </div>
+        <div class="flex items-center justify-center gap-1.5 sm:gap-2">
+          <svg class="w-4 h-4 text-emerald-600 dark:text-emerald-400 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <polyline points="20 6 9 17 4 12"></polyline>
+          </svg>
+          <span class="font-bold">Zero Data Storage</span>
+        </div>
+        <div class="flex items-center justify-center gap-1.5 sm:gap-2">
+          <svg class="w-4 h-4 text-emerald-600 dark:text-emerald-400 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <polyline points="20 6 9 17 4 12"></polyline>
+          </svg>
+          <span class="font-bold">No Account or Ads</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Popular / Featured Tools Section -->
+  <section class="py-10 sm:py-12 max-w-7xl mx-auto px-4 sm:px-6">
+    <div class="flex flex-col sm:flex-row sm:items-center justify-between mb-6 gap-2">
+      <div>
+        <h2 class="text-xl font-bold tracking-tight text-neutral-950 dark:text-white">
+          Popular Document Tools
+        </h2>
+        <p class="text-xs sm:text-sm text-neutral-700 dark:text-neutral-300 mt-0.5">
+          Most frequently used tools for fast, private document workflows.
+        </p>
+      </div>
+      <a href="#all-tools" class="text-xs font-semibold text-neutral-800 dark:text-neutral-200 hover:text-blue-600 dark:hover:text-blue-400 flex items-center gap-1">
+        View all 20+ tools ↓
+      </a>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+      {POPULAR_TOOLS.slice(0, 4).map(tool => (
+        <ToolCard tool={tool} />
+      ))}
+    </div>
+  </section>
+
+  <!-- All 5 PDF Tool Categories -->
+  <div id="all-tools" class="max-w-7xl mx-auto px-4 sm:px-6 py-6 space-y-10 sm:space-y-12">
+    <div class="text-center max-w-xl mx-auto pt-4 sm:pt-6">
+      <span class="text-xs font-mono px-3 py-1 rounded-full bg-neutral-100 dark:bg-neutral-800 text-neutral-800 dark:text-neutral-200 border border-neutral-200 dark:border-neutral-700 font-semibold">
+        Tool Directory
+      </span>
+      <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight text-neutral-950 dark:text-white mt-2.5">
+        Complete PDF Suite
+      </h2>
+      <p class="mt-2 text-xs sm:text-sm text-neutral-700 dark:text-neutral-300">
+        Carefully categorized utilities for organizing, converting, optimizing, and editing your documents.
+      </p>
+    </div>
+
+    <!-- Category 1: Organize PDF -->
+    <CategorySection category={CATEGORIES[0]} />
+
+    <!-- Category 2: Optimize PDF -->
+    <CategorySection category={CATEGORIES[1]} />
+
+    <!-- Category 3: Convert to PDF -->
+    <CategorySection category={CATEGORIES[2]} />
+
+    <!-- Category 4: Convert from PDF -->
+    <CategorySection category={CATEGORIES[3]} />
+
+    <!-- Category 5: Edit PDF -->
+    <CategorySection category={CATEGORIES[4]} />
+  </div>
+
+  <!-- Privacy Comparison / Why We Are Better than iLovePDF -->
+  <PrivacyBanner />
+
+  <!-- FAQ Section -->
+  <FAQSection />
+</Layout>

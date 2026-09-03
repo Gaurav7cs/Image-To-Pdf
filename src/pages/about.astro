@@ -1,0 +1,69 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout
+  title="About Us — The Modern, Privacy-First PDF Toolkit | Image To Pdf"
+  description="Learn why OnlineImageToPdf was created to liberate users from sluggish server uploads, ad-cluttered tools, and privacy risks when working with documents."
+  canonicalUrl="https://onlineimagetopdf.com/about"
+>
+  <div class="max-w-3xl mx-auto px-4 sm:px-6 py-8 sm:py-12 md:py-16">
+    <div class="mb-8">
+      <span class="text-xs font-mono px-3 py-1 rounded-full bg-blue-100 dark:bg-blue-500/10 text-blue-800 dark:text-blue-300 border border-blue-300 dark:border-blue-500/20 font-bold">
+        Our Architecture
+      </span>
+      <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-neutral-950 dark:text-white mt-3">
+        Why We Built OnlineImageToPdf
+      </h1>
+      <p class="text-xs text-neutral-600 dark:text-neutral-400 font-mono font-medium mt-1.5">Re-architecting online document utilities for the modern web.</p>
+    </div>
+
+    <div class="prose dark:prose-invert text-sm sm:text-base text-neutral-800 dark:text-neutral-200 space-y-6 leading-relaxed">
+      <p>
+        For over a decade, converting an image to a PDF meant visiting an outdated website, uploading personal tax forms, medical records, or family photos to a mysterious remote server, waiting in a server conversion queue, and downloading the result surrounded by distracting banner advertisements.
+      </p>
+
+      <p>
+        Modern web browsers are capable of running complex desktop software locally. With WebAssembly, HTML5 Canvas, and modern JavaScript engines, computers and smartphones possess all the computing power required to build, merge, compress, and manipulate PDF documents in milliseconds.
+      </p>
+
+      <h2 class="text-lg sm:text-xl font-bold text-neutral-950 dark:text-white pt-4">Key Technological Pillars</h2>
+      
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 my-6">
+        <div class="p-4 sm:p-5 rounded-xl bg-neutral-50 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 shadow-xs">
+          <h3 class="font-bold text-sm text-neutral-950 dark:text-white mb-1.5">In-Memory Compilation</h3>
+          <p class="text-xs text-neutral-700 dark:text-neutral-300 leading-relaxed">
+            PDF binary objects are structured directly in device memory using native byte arrays, ensuring near-zero processing latency.
+          </p>
+        </div>
+
+        <div class="p-4 sm:p-5 rounded-xl bg-neutral-50 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 shadow-xs">
+          <h3 class="font-bold text-sm text-neutral-950 dark:text-white mb-1.5">Local Sandboxing</h3>
+          <p class="text-xs text-neutral-700 dark:text-neutral-300 leading-relaxed">
+            Files operate under strict browser security policies. No temporary server files, no remote logging, and no persistent disk cache.
+          </p>
+        </div>
+
+        <div class="p-4 sm:p-5 rounded-xl bg-neutral-50 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 shadow-xs">
+          <h3 class="font-bold text-sm text-neutral-950 dark:text-white mb-1.5">Zero Paywalls</h3>
+          <p class="text-xs text-neutral-700 dark:text-neutral-300 leading-relaxed">
+            Because conversions do not consume costly server CPU compute clusters, we don't need to force users into monthly subscription plans.
+          </p>
+        </div>
+
+        <div class="p-4 sm:p-5 rounded-xl bg-neutral-50 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 shadow-xs">
+          <h3 class="font-bold text-sm text-neutral-950 dark:text-white mb-1.5">Vercel-Grade Craft</h3>
+          <p class="text-xs text-neutral-700 dark:text-neutral-300 leading-relaxed">
+            A minimalist, clutter-free user interface designed for speed, clarity, high accessibility, and joyful usability.
+          </p>
+        </div>
+      </div>
+
+      <div class="mt-8 pt-6 border-t border-neutral-200 dark:border-neutral-800">
+        <a href="/" class="text-blue-600 dark:text-blue-400 hover:underline font-bold text-xs inline-flex items-center gap-1">
+          ← Back to converter tools
+        </a>
+      </div>
+    </div>
+  </div>
+</Layout>

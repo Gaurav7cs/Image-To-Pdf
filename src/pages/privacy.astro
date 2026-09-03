@@ -1,0 +1,65 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout
+  title="Privacy Policy — 100% Client-Side In-Browser Processing | Image To Pdf"
+  description="Our absolute privacy guarantee: all image and PDF document conversions take place entirely on your device using client-side JavaScript and WebAssembly. No files are uploaded."
+  canonicalUrl="https://onlineimagetopdf.com/privacy"
+>
+  <div class="max-w-3xl mx-auto px-4 sm:px-6 py-8 sm:py-12 md:py-16">
+    <div class="mb-8">
+      <span class="text-xs font-mono px-3 py-1 rounded-full bg-emerald-100 dark:bg-emerald-500/10 text-emerald-800 dark:text-emerald-300 border border-emerald-300 dark:border-emerald-500/20 font-bold">
+        Zero Data Collection Policy
+      </span>
+      <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-neutral-950 dark:text-white mt-3">
+        Privacy & Security Policy
+      </h1>
+      <p class="text-xs text-neutral-600 dark:text-neutral-400 font-mono font-medium mt-1.5">Last updated: September 2026</p>
+    </div>
+
+    <div class="prose dark:prose-invert text-sm text-neutral-800 dark:text-neutral-200 space-y-6 leading-relaxed">
+      <div class="p-5 rounded-2xl bg-emerald-50 dark:bg-emerald-950/20 border border-emerald-200 dark:border-emerald-800/60 text-neutral-900 dark:text-neutral-100">
+        <h3 class="font-bold text-sm text-emerald-800 dark:text-emerald-400 mb-1">Our Core Commitment</h3>
+        <p>
+          Unlike legacy conversion sites, <strong>OnlineImageToPdf.com does not receive, upload, store, or view your files</strong>. When you convert JPG, PNG, or other formats to PDF, the code executes directly inside your browser’s sandbox using client-side WebAssembly and modern web APIs.
+        </p>
+      </div>
+
+      <h2 class="text-lg font-bold text-neutral-950 dark:text-white pt-4">1. How Document Processing Works</h2>
+      <p>
+        When you select or drop images into the converter:
+      </p>
+      <ul class="list-disc pl-5 space-y-2 text-neutral-750 dark:text-neutral-250">
+        <li>Your files are read from your local storage directly into browser memory (RAM) via standard HTML5 File APIs.</li>
+        <li>The PDF document is synthesized directly using client-side JavaScript (<code>pdf-lib</code> and Canvas).</li>
+        <li>The resulting PDF is offered as a local <code>blob:</code> download link.</li>
+        <li>No network requests containing your images, documents, or personal data are ever initiated.</li>
+      </ul>
+
+      <h2 class="text-lg font-bold text-neutral-950 dark:text-white pt-4">2. Comparison with Competitors</h2>
+      <p>
+        Services such as iLovePDF, Smallpdf, and similar legacy platforms typically transfer your files over the public internet to remote cloud storage clusters, convert them on backend servers, and delete them on an automated timer. Even with encryption, this introduces third-party risk, ISP logging, and data interception vectors.
+      </p>
+      <p>
+        With OnlineImageToPdf.com, because there is no server upload, there is <strong>zero risk of server breaches, data leaks, or unauthorized retention</strong>.
+      </p>
+
+      <h2 class="text-lg font-bold text-neutral-950 dark:text-white pt-4">3. Analytical Data</h2>
+      <p>
+        We do not sell, rent, or monetize your personal information. We do not use third-party behavioral tracker cookies or fingerprinting scripts.
+      </p>
+
+      <h2 class="text-lg font-bold text-neutral-950 dark:text-white pt-4">4. GDPR and CCPA Compliance</h2>
+      <p>
+        Because we never collect, store, or process your personal files or personal identifiers on our servers, our service is inherently compliant with global data privacy frameworks including the EU General Data Protection Regulation (GDPR) and California Consumer Privacy Act (CCPA).
+      </p>
+
+      <div class="mt-8 pt-6 border-t border-neutral-200 dark:border-neutral-800">
+        <a href="/" class="text-blue-600 dark:text-blue-400 hover:underline font-bold text-xs inline-flex items-center gap-1">
+          ← Back to converter tools
+        </a>
+      </div>
+    </div>
+  </div>
+</Layout>

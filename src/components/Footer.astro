@@ -1,0 +1,67 @@
+---
+import { CATEGORIES, getToolsByCategory } from '../data/tools';
+---
+
+<footer class="w-full border-t border-neutral-200 dark:border-neutral-800 bg-neutral-50/70 dark:bg-black text-neutral-700 dark:text-neutral-300 text-xs transition-colors">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 py-12 sm:py-16">
+    {/* 5 Categories Grid */}
+    <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-8 mb-12">
+      {CATEGORIES.map(category => {
+        const tools = getToolsByCategory(category.id);
+        return (
+          <div class="space-y-3">
+            <h4 class="font-bold text-xs text-neutral-950 dark:text-white uppercase tracking-wider">
+              {category.shortTitle}
+            </h4>
+            <ul class="space-y-2">
+              {tools.map(tool => (
+                <li>
+                  <a
+                    href={`/tools/${tool.slug}`}
+                    class="text-neutral-700 hover:text-neutral-950 dark:text-neutral-300 dark:hover:text-white font-medium transition-colors inline-flex items-center gap-1.5"
+                  >
+                    <span>{tool.name}</span>
+                    {tool.badge && (
+                      <span class={`text-[9px] px-1.5 py-0.2 rounded font-mono font-semibold ${
+                        tool.badge === 'Coming Soon'
+                          ? 'bg-amber-100 dark:bg-amber-500/10 text-amber-900 dark:text-amber-300'
+                          : 'bg-neutral-200 dark:bg-neutral-800 text-neutral-800 dark:text-neutral-200'
+                      }`}>
+                        {tool.badge}
+                      </span>
+                    )}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        );
+      })}
+    </div>
+
+    {/* Divider */}
+    <div class="border-t border-neutral-200 dark:border-neutral-800 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
+      {/* Brand & Privacy */}
+      <div class="flex flex-col sm:flex-row items-center gap-3 text-center sm:text-left">
+        <div class="flex items-center gap-2">
+          <div class="w-5 h-5 rounded bg-neutral-950 dark:bg-white flex items-center justify-center text-white dark:text-neutral-950 font-bold text-xs">
+            P
+          </div>
+          <span class="font-bold text-neutral-950 dark:text-white">OnlineImageToPdf.com</span>
+        </div>
+        <span class="hidden sm:inline text-neutral-400 dark:text-neutral-600">|</span>
+        <span class="text-neutral-600 dark:text-neutral-400 text-xs font-medium">
+          Client-native zero-server-upload document processing.
+        </span>
+      </div>
+
+      {/* Legal & Meta Links */}
+      <div class="flex flex-wrap items-center justify-center gap-4 text-xs font-medium text-neutral-700 dark:text-neutral-300">
+        <a href="/privacy" class="hover:text-neutral-950 dark:hover:text-white transition-colors">Privacy Policy</a>
+        <a href="/about" class="hover:text-neutral-950 dark:hover:text-white transition-colors">Why Client-Side?</a>
+        <a href="/#faq-section" class="hover:text-neutral-950 dark:hover:text-white transition-colors">FAQ</a>
+        <span class="text-neutral-500 dark:text-neutral-400">© 2026 Image To Pdf</span>
+      </div>
+    </div>
+  </div>
+</footer>
