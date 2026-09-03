@@ -7,6 +7,7 @@ import SplitPdfTool from '../../components/tools/SplitPdfTool';
 import RotatePdfTool from '../../components/tools/RotatePdfTool';
 import ComingSoonTool from '../../components/tools/ComingSoonTool';
 import ToolCard from '../../components/ToolCard.astro';
+import FAQSection from '../../components/FAQSection.astro';
 
 export function getStaticPaths() {
   return TOOLS.map((tool) => ({
@@ -97,6 +98,13 @@ const isRotate = tool.slug === 'rotate-pdf-pages' || tool.slug === 'rotate-pages
             <ToolCard tool={t} />
           ))}
         </div>
+      </div>
+    )}
+
+    <!-- FAQ Section -->
+    {isImageConverter && (
+      <div class="pt-8 sm:pt-12 border-t border-neutral-200 dark:border-neutral-800">
+        <FAQSection />
       </div>
     )}
   </div>

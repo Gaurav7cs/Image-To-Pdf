@@ -3,14 +3,105 @@ import Layout from '../layouts/Layout.astro';
 import ImageToPdfConverter from '../components/converter/ImageToPdfConverter';
 import CategorySection from '../components/CategorySection.astro';
 import PrivacyBanner from '../components/PrivacyBanner.astro';
+import SeoContent from '../components/SeoContent.astro';
 import FAQSection from '../components/FAQSection.astro';
 import ToolCard from '../components/ToolCard.astro';
 import { CATEGORIES, POPULAR_TOOLS } from '../data/tools';
+
+const pageTitle = "Image To Pdf – Free Online Image to PDF Converter & Maker";
+const pageDescription = "Convert image to PDF free online with our fast image to pdf converter. Turn JPG to PDF, resize PDF to 100KB or 200KB, merge PDF, & convert PDF to JPG 100% private in your browser.";
+const pageKeywords = "image to pdf, image to pdf converter, convert image to pdf, how to convert image to pdf, pdf to jpg, image to pdf converter free, image to pdf 200kb, image to pdf maker, image to pdf 100kb, jpg to pdf, merge pdf, pdf resize";
+
+const homeSchemas = [
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Image To Pdf",
+    "alternateName": [
+      "Image to PDF Converter",
+      "Image to PDF Maker",
+      "Online Image to PDF Converter Free",
+      "JPG to PDF Converter"
+    ],
+    "url": "https://onlineimagetopdf.com",
+    "applicationCategory": "MultimediaApplication",
+    "operatingSystem": "All",
+    "browserRequirements": "Requires JavaScript. Requires HTML5.",
+    "description": pageDescription,
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "featureList": [
+      "Convert image to PDF",
+      "JPG to PDF conversion",
+      "Image to PDF 100KB preset",
+      "Image to PDF 200KB preset",
+      "PDF resize and compression",
+      "Merge PDF documents",
+      "PDF to JPG converter",
+      "100% client-side WebAssembly conversion"
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "How to Convert Image to PDF Online for Free",
+    "description": "Step-by-step tutorial on how to convert image to PDF in seconds with custom layout, 100KB/200KB size presets, and complete client-side privacy.",
+    "totalTime": "PT30S",
+    "step": [
+      {
+        "@type": "HowToStep",
+        "position": 1,
+        "name": "Upload or Drag Images",
+        "text": "Drag and drop your JPG, PNG, WebP, or HEIC image files into the converter area.",
+        "url": "https://onlineimagetopdf.com/#converter-section"
+      },
+      {
+        "@type": "HowToStep",
+        "position": 2,
+        "name": "Customize Layout & Margins",
+        "text": "Choose page orientation, standard paper size (A4, Letter, Fit to Image), and margin options.",
+        "url": "https://onlineimagetopdf.com/#converter-section"
+      },
+      {
+        "@type": "HowToStep",
+        "position": 3,
+        "name": "Select Target File Size (100KB / 200KB / Custom)",
+        "text": "Choose your target size preset such as 100KB or 200KB to automatically resize and compress your PDF for portal uploads.",
+        "url": "https://onlineimagetopdf.com/#converter-section"
+      },
+      {
+        "@type": "HowToStep",
+        "position": 4,
+        "name": "Convert and Download PDF",
+        "text": "Click 'Convert to PDF' to generate and download your finalized PDF immediately in your browser.",
+        "url": "https://onlineimagetopdf.com/#converter-section"
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Image To Pdf",
+    "url": "https://onlineimagetopdf.com",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://onlineimagetopdf.com/tools/{search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  }
+];
 ---
 
 <Layout
-  title="Image to PDF — Free Online Converter (100% Client-Side Private)"
-  description="Convert JPG, PNG, WebP, and HEIC images to PDF online directly in your browser. No file uploads to external servers. Fast, secure, and completely free document processing."
+  title={pageTitle}
+  description={pageDescription}
+  keywords={pageKeywords}
+  canonicalUrl="https://onlineimagetopdf.com"
+  image="https://onlineimagetopdf.com/og-image.png"
+  schema={homeSchemas}
 >
   <!-- Hero Section -->
   <section class="relative pt-8 pb-14 sm:pt-14 sm:pb-20 overflow-hidden border-b border-neutral-200 dark:border-neutral-800 bg-radial from-neutral-100/60 via-transparent to-transparent dark:from-neutral-900/30">
@@ -19,20 +110,20 @@ import { CATEGORIES, POPULAR_TOOLS } from '../data/tools';
       <div class="flex justify-center mb-5 sm:mb-6">
         <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full border border-neutral-300 dark:border-neutral-700 bg-white dark:bg-neutral-900 shadow-xs text-xs font-mono text-neutral-800 dark:text-neutral-200 font-medium">
           <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-          <span>Next-Gen Private PDF Processing</span>
+          <span>100% Free Client-Side Engine</span>
           <span class="text-neutral-400 dark:text-neutral-600">•</span>
-          <span class="text-neutral-700 dark:text-neutral-300 font-semibold">Zero Cloud Uploads</span>
+          <span class="text-neutral-700 dark:text-neutral-300 font-semibold">Zero Server Uploads</span>
         </div>
       </div>
 
       <!-- Headline -->
       <div class="text-center max-w-3xl mx-auto">
         <h1 class="text-3xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-neutral-950 dark:text-white leading-[1.12]">
-          Convert Images to PDF.<br class="hidden sm:inline"/>
-          <span class="vercel-blue-gradient">Fast. Private. In Your Browser.</span>
+          Image To Pdf Converter.<br class="hidden sm:inline"/>
+          <span class="vercel-blue-gradient">Fast, Private &amp; 100% Free.</span>
         </h1>
         <p class="mt-4 text-sm sm:text-base md:text-lg text-neutral-700 dark:text-neutral-300 max-w-2xl mx-auto leading-relaxed">
-          The privacy-first document toolkit. Convert JPG, PNG, WebP, and HEIC images into standardized PDF files with full control over margins, orientation, and layout — without sending a single byte to remote servers.
+          The ultimate <strong>image to pdf maker</strong>. Convert JPG to PDF, PNG, WebP, and HEIC images into standardized PDF documents. Target exact file sizes like <strong>image to pdf 100kb</strong> or <strong>200kb</strong>, customize margins and orientation, and merge PDF files—completely private in your browser.
         </p>
       </div>
 
@@ -47,19 +138,19 @@ import { CATEGORIES, POPULAR_TOOLS } from '../data/tools';
           <svg class="w-4 h-4 text-emerald-600 dark:text-emerald-400 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
             <polyline points="20 6 9 17 4 12"></polyline>
           </svg>
-          <span class="font-bold">100% Client-Side Engine</span>
+          <span class="font-bold">100% Client-Side Privacy</span>
         </div>
         <div class="flex items-center justify-center gap-1.5 sm:gap-2">
           <svg class="w-4 h-4 text-emerald-600 dark:text-emerald-400 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
             <polyline points="20 6 9 17 4 12"></polyline>
           </svg>
-          <span class="font-bold">No File Size Limits</span>
+          <span class="font-bold">Target 100KB &amp; 200KB</span>
         </div>
         <div class="flex items-center justify-center gap-1.5 sm:gap-2">
           <svg class="w-4 h-4 text-emerald-600 dark:text-emerald-400 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
             <polyline points="20 6 9 17 4 12"></polyline>
           </svg>
-          <span class="font-bold">Zero Data Storage</span>
+          <span class="font-bold">Zero Cloud Storage</span>
         </div>
         <div class="flex items-center justify-center gap-1.5 sm:gap-2">
           <svg class="w-4 h-4 text-emerald-600 dark:text-emerald-400 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
@@ -79,7 +170,7 @@ import { CATEGORIES, POPULAR_TOOLS } from '../data/tools';
           Popular Document Tools
         </h2>
         <p class="text-xs sm:text-sm text-neutral-700 dark:text-neutral-300 mt-0.5">
-          Most frequently used tools for fast, private document workflows.
+          Fast, private tools for JPG to PDF, merge PDF, split PDF, and document optimization.
         </p>
       </div>
       <a href="#all-tools" class="text-xs font-semibold text-neutral-800 dark:text-neutral-200 hover:text-blue-600 dark:hover:text-blue-400 flex items-center gap-1">
@@ -104,7 +195,7 @@ import { CATEGORIES, POPULAR_TOOLS } from '../data/tools';
         Complete PDF Suite
       </h2>
       <p class="mt-2 text-xs sm:text-sm text-neutral-700 dark:text-neutral-300">
-        Carefully categorized utilities for organizing, converting, optimizing, and editing your documents.
+        Categorized browser tools for converting image to PDF, organizing, resizing, and editing documents.
       </p>
     </div>
 
@@ -127,6 +218,9 @@ import { CATEGORIES, POPULAR_TOOLS } from '../data/tools';
   <!-- Privacy Comparison / Why We Are Better than iLovePDF -->
   <PrivacyBanner />
 
-  <!-- FAQ Section -->
+  <!-- Comprehensive 600+ Word SEO Content Section -->
+  <SeoContent />
+
+  <!-- FAQ Section with Rich Schema Integration -->
   <FAQSection />
 </Layout>
